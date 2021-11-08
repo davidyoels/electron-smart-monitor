@@ -6,23 +6,17 @@
       name="viewport"
       content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"
     />
-    <link rel="stylesheet" href="../css/index.css" />
+    <link rel="stylesheet" href="/css/index.css" />
     <!-- <script src="http://localhost:3000/socket.io/socket.io.js"></script> -->
     <script
       src="https://cdn.socket.io/4.3.2/socket.io.min.js"
       integrity="sha384-KAZ4DtjNhLChOB/hxXuKqhMLYvx3b5MlT55xPEiNmREKRzeEm+RVPlTnAn0ajQNs"
       crossorigin="anonymous"
     ></script>
-    <script>
-      var socket = io.connect();
-      socket.on("touch", (data) => {
-        console.log("touch");
-        document.getElementById("zmanim").innerHTML = "daskjd";
-      });
-    </script>
+
     <title>Smart Monitor</title>
   </head>
-  <body>
+  <body onload="onload">
     <div class="i-container">
       <div class="i-top">
         <h2>מערכת צג חכם בית כנסת שירת ישראל</h2>
