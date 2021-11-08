@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="he">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"
+    />
+    <link rel="stylesheet" href="../css/index.css" />
+    <!-- <script src="http://localhost:3000/socket.io/socket.io.js"></script> -->
+    <script
+      src="https://cdn.socket.io/4.3.2/socket.io.min.js"
+      integrity="sha384-KAZ4DtjNhLChOB/hxXuKqhMLYvx3b5MlT55xPEiNmREKRzeEm+RVPlTnAn0ajQNs"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      var socket = io.connect();
+      socket.on("touch", (data) => {
+        console.log("touch");
+        document.getElementById("zmanim").innerHTML = "daskjd";
+      });
+    </script>
+    <title>Smart Monitor</title>
+  </head>
+  <body>
+    <div class="i-container">
+      <div class="i-top">
+        <h2>מערכת צג חכם בית כנסת שירת ישראל</h2>
+      </div>
+      <div class="i-bottom">
+        <div class="i-item-center">
+          <button id="zmanim" onclick="window.location.href='/timesScreen'">
+            הצג מסך זמנים
+          </button>
+          <button onclick="window.location.href='/addShabatTimes'">
+            הוסף זמני שבת
+          </button>
+          <button onclick="window.location.href='/timesScreen'">
+            זמני אוכל הצג
+          </button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

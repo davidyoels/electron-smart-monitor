@@ -1,0 +1,137 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+.s-m-container,
+body,
+html {
+  height: 100%;
+}
+.s-m-container {
+  display: flex;
+  flex-direction: column;
+}
+/*--------------- <top> ---------------*/
+
+.s-m-top {
+  flex-basis: 20%;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+  align-items: center;
+  background-image: url("../img/b2.jpg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+.s-m-top img {
+  height: 50%;
+  width: 30%;
+}
+
+/*--------------- </top> ---------------*/
+
+/*--------------- <middle> ---------------*/
+
+.s-m-middle {
+  flex-basis: 7%;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-around;
+  height: 100%;
+  width: 100%;
+  background-image: url("../img/download.jpg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+.s-m-middle .right {
+  flex-basis: 33%;
+}
+
+.s-m-middle .middle {
+  flex-basis: 34%;
+  display: flex;
+  align-self: center;
+  justify-content: center;
+}
+
+.s-m-middle .left {
+  flex-basis: 33%;
+  display: flex;
+  align-self: center;
+  justify-content: center;
+}
+
+.s-m-middle .middle #time {
+  font: 3vw sans-serif;
+  text-align: center;
+  color: rgb(148, 134, 7);
+}
+
+.s-m-middle .left #date b {
+  font: 3vw sans-serif;
+  text-align: center;
+  color: rgb(148, 134, 7);
+}
+
+/*--------------- </middle> ---------------*/
+
+/*--------------- <bottom> ---------------*/
+
+.s-m-bottom {
+  flex-basis: 73%;
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.s-m-bottom .right {
+  flex-basis: 33%;
+}
+.s-m-bottom .right .messages {
+  height: 100%;
+  width: 100%;
+  background-image: url("../img/times.png");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+.aaa {
+  height: 100%;
+  width: 100%;
+  background-image: url("../img/c1.jpg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+.s-m-bottom .right {
+  flex-basis: 33%;
+  border: 2px solid rgb(73, 42, 2);
+}
+.s-m-bottom .middle {
+  flex-basis: 34%;
+  border: 2px solid rgb(73, 42, 2);
+}
+.s-m-bottom .left {
+  flex-basis: 33%;
+  border: 2px solid rgb(73, 42, 2);
+}
+
+h2 {
+  margin: 0;
+  font-size: 3.6vmin;
+}
+
+.zmanim-data-c {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-self: center;
+  align-content: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+}
+
+/*--------------- </bottom> ---------------*/

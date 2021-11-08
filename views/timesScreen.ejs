@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html dir="rtl">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"
+    />
+    <link rel="stylesheet" href="/css/timesScreen.css" />
+    <title>בית כנסת שירת ישראל</title>
+  </head>
+  <body>
+    <div class="s-m-container">
+      <div class="s-m-top">
+        <img src="/img/prayName.png" alt="no image" />
+      </div>
+      <div class="s-m-middle">
+        <div class="middle">
+          <div id="time"></div>
+        </div>
+        <div class="left">
+          <div id="date">
+            <b
+              ><script
+                type="text/javascript"
+                charset="utf-8"
+                src="https://www.hebcal.com/etc/hdate-he.js"
+              ></script>
+            </b>
+          </div>
+        </div>
+      </div>
+      <div class="s-m-bottom">
+        <div class="right">
+          <div class="aaa">
+            <div class="zmanim-data-c">
+              <table>
+                <th></th>
+                <th></th>
+                <% for (let i in zmanim_data) { %>
+                <tr>
+                  <td>
+                    <h2><strong> <%= i %> :</strong></h2>
+                  </td>
+                  <td>
+                    <h2><strong><%= zmanim_data[i] %></strong></h2>
+                  </td>
+                </tr>
+                <% } %>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div class="middle">
+          <div class="aaa"></div>
+        </div>
+        <div class="left">
+          <div class="aaa"></div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

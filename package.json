@@ -1,0 +1,43 @@
+{
+  "name": "smart-monitor-electron",
+  "version": "1.0.0",
+  "description": "<h2>Desktop Application powered by Node.js, Electron, Bootstrap, and Express.js</h2>",
+  "main": "main.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/davidyoels/smart-monitor.git"
+  },
+  "scripts": {
+    "start": "electron .",
+    "dev": "npx electronmon ."
+  },
+  "keywords": [
+    "Electron",
+    "Node",
+    "Template",
+    "Hackathon"
+  ],
+  "author": "David Yoel Salomon",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/davidyoels/smart-monitor/issues"
+  },
+  "homepage": "https://github.com/davidyoels/smart-monitor#readme",
+  "dependencies": {
+    "bootstrap": "4.2.1",
+    "docxtemplater": "^3.16.3",
+    "ejs": "^3.0.1",
+    "electron-fetch": "^1.7.4",
+    "express": "^4.17.1",
+    "jquery": "^3.6.0",
+    "node-schedule": "^2.0.0",
+    "nodemon": "^2.0.14",
+    "pizzip": "^3.0.6",
+    "socket.io": "^4.3.2"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.27.7",
+    "electron": "^4.2.12",
+    "gulp": "4.0.0"
+  }
+}

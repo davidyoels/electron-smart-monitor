@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="he">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"
+    />
+    <link rel="stylesheet" href="../stylesheets/addShabatTimes.css" />
+    <title>Smart Monitor</title>
+  </head>
+  <script>
+    function show() {
+      console.log("asdasd");
+      console.log(document.getElementById("fname").value);
+      console.log(document.getElementById("timee").value);
+      document.getElementById("flabel").innerText = "שגיאה";
+    }
+  </script>
+  <body>
+    <h3>הוסף זמני שבת</h3>
+    <div>
+      <form action="/addShabatTimes" method="POST">
+        <label id="flabel" for="fname"></label>
+        <input
+          type="text"
+          onchange="show()"
+          id="fname"
+          name="second-prayer-friday"
+          placeholder="זמן תפילת מנחה"
+        />
+
+        <label for="lname"></label>
+        <input
+          type="text"
+          id="rname"
+          name="third-prayer"
+          placeholder="זמן תפילת ערבית"
+        />
+
+        <label for="lname"></label>
+        <input
+          type="text"
+          id="lname"
+          name="first-prayer"
+          placeholder="זמן תפילת שחרית שבת"
+        />
+
+        <label for="lname"></label>
+        <input
+          type="time"
+          size="big"
+          onchange="show()"
+          id="timee"
+          name="second-prayer"
+          placeholder="זמן תפילת מנחה שבת"
+        />
+
+        <!-- <select id="country" name="country">
+              <option value="australia">Australia</option>
+              <option value="canada">Canada</option>
+              <option value="usa">USA</option>
+            </select> -->
+        <input type="submit" value="Submit" />
+      </form>
+    </div>
+  </body>
+</html>
