@@ -1,17 +1,23 @@
-const express = require("express");
-const socket = require("socket.io");
+const socketIO = require("socket.io");
+const schedule = require("node-schedule");
+const { fetchZmanimData } = require("../data/zmanim");
 
-// App setup
-const PORT = 5000;
-const app = express();
-const serverSocket = app.listen(PORT, function () {
-  console.log(`Listening on port ${PORT}`);
-  console.log(`http://localhost:${PORT}`);
-});
+const scheduleJob = (name, expression, callback) => {
+  schedule.scheduleJob(name, expression, callback);
+};
 
-// Socket setup
-const io = socket(server);
+const createSocketIO = (appServer) => {
+  const io = socketIO(appServer);
+  io.on("connection", (socket) => {
+    console.log("a user connected");
+    scheduleJob("m-job", "*/5 * * * * *", () => {
+      fetchZmanimData().then((zmanim_data) => {
+        io.emit("touch", zmanim_data);
+      });
+    });
+  });
+};
 
 module.exports = {
-  socketIO: io
+  createSocketIO: createSocketIO
 };

@@ -2,9 +2,20 @@ const zmanimKeys = require("../utils/keys/zmanim-keys");
 const { geo_location } = require("../utils/consts/geolocation");
 const fetch = require("electron-fetch").default;
 
+let i = 0;
+
 const fetchZmanimData = async () => {
+  const date = new Date();
+  if (i == 0) {
+    date.setDate(date.getDate() + 1);
+    i = 1;
+  } else {
+    date.setDate(date.getDate() - 1);
+    i = 0;
+  }
+  const fixedDate = date.toISOString().split("T")[0];
   return fetch(
-    `https://www.hebcal.com/zmanim?cfg=json&geonameid=${geo_location}&date=2021-11-07`
+    `https://www.hebcal.com/zmanim?cfg=json&geonameid=${geo_location}&date=${fixedDate}`
   )
     .then((resonse) => resonse.json())
     .then((data) => {
@@ -25,7 +36,6 @@ const fetchZmanimData = async () => {
           timesInHebrew[extractHebrewKey] = newTime;
         }
       }
-      console.log("This", timesInHebrew);
       return timesInHebrew;
     });
 };
