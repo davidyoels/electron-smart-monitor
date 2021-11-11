@@ -21,9 +21,16 @@
 
       function display_ct() {
         var x = new Date();
-        document.getElementById(
-          "time"
-        ).innerHTML = `${x.getHours()}:${x.getMinutes()}:${x.getSeconds()}`;
+        var s = x.getSeconds();
+        var m = x.getMinutes();
+        var h = x.getHours();
+        var textContent =
+          ("0" + h).substr(-2) +
+          ":" +
+          ("0" + m).substr(-2) +
+          ":" +
+          ("0" + s).substr(-2);
+        document.getElementById("time").innerHTML = textContent;
         display_c();
       }
 
