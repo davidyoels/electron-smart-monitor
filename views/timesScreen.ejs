@@ -13,22 +13,41 @@
       integrity="sha384-KAZ4DtjNhLChOB/hxXuKqhMLYvx3b5MlT55xPEiNmREKRzeEm+RVPlTnAn0ajQNs"
       crossorigin="anonymous"
     ></script>
+    <script type="text/javascript">
+      function display_c() {
+        var refresh = 1000; // Refresh rate in milli seconds
+        mytime = setTimeout("display_ct()", refresh);
+      }
+
+      function display_ct() {
+        var x = new Date();
+        document.getElementById(
+          "time"
+        ).innerHTML = `${x.getHours()}:${x.getMinutes()}:${x.getSeconds()}`;
+        display_c();
+      }
+
+      function initialPageSetup() {
+        display_ct();
+      }
+    </script>
     <script>
       var socket = io.connect();
+      let counter = 0;
       socket.on("touch", (data) => {
-        // console.log("touch", data);
+        console.log("touch", counter++);
         zmanim_data = data;
         let containerTable = `<th></th><th></th>`;
         for (let i in zmanim_data) {
           containerTable += `<tr>
               <td>
                 <h2>
-                  <strong> ${i}:</strong>
+                  <strong>${i}:</strong>
                 </h2>
               </td>
               <td>
                 <h2>
-                  <strong> ${zmanim_data[i]} </strong>
+                  <strong>${zmanim_data[i]}</strong>
                 </h2>
               </td>
             </tr>`;
@@ -37,7 +56,7 @@
       });
     </script>
   </head>
-  <body>
+  <body onload="initialPageSetup()">
     <div class="s-m-container">
       <div class="s-m-top">
         <img src="/img/prayName.png" alt="no image" />

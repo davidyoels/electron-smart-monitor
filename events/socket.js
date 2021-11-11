@@ -10,7 +10,7 @@ const createSocketIO = (appServer) => {
   const io = socketIO(appServer);
   io.on("connection", (socket) => {
     console.log("a user connected");
-    scheduleJob("m-job", "*/5 * * * * *", () => {
+    scheduleJob("m-job", "*/10 * * * * *", () => {
       fetchZmanimData().then((zmanim_data) => {
         io.emit("touch", zmanim_data);
       });
