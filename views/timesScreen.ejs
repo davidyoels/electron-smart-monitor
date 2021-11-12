@@ -6,6 +6,10 @@
       name="viewport"
       content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"
     />
+    <link
+      href="https://fonts.googleapis.com/css?family=Assistant"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="/css/timesScreen.css" />
     <title>בית כנסת שירת ישראל</title>
     <script
@@ -59,55 +63,77 @@
               </td>
             </tr>`;
         }
+        console.log(containerTable);
         document.getElementById("zmanim-table-data").innerHTML = containerTable;
       });
     </script>
   </head>
   <body onload="initialPageSetup()">
     <div class="s-m-container">
-      <div class="s-m-top">
-        <img src="/img/prayName.png" alt="no image" />
+      <div class="s-m-logo">
+        <div class="s-m-left-logo"></div>
+        <div class="s-m-middle-logo">
+          <text class="pray-name"> בית כנסת שירת ישראל </text>
+        </div>
+        <div class="s-m-right-logo"></div>
       </div>
-      <div class="s-m-middle">
-        <div class="middle">
+      <div class="s-m-date-time">
+        <div class="s-m-left-datime">
+          <script
+            type="text/javascript"
+            charset="utf-8"
+            src="https://www.hebcal.com/etc/hdate-he.js"
+          ></script>
+        </div>
+        <div class="s-m-middle-datime">
           <div id="time"></div>
         </div>
+        <div class="s-m-right-datime">
+          <div id="parasha">פרשת חיי שרה</div>
+        </div>
         <div class="left">
-          <div id="date">
-            <b
-              ><script
-                type="text/javascript"
-                charset="utf-8"
-                src="https://www.hebcal.com/etc/hdate-he.js"
-              ></script>
-            </b>
-          </div>
+          <div id="date"></div>
         </div>
       </div>
-      <div class="s-m-bottom">
-        <div class="right">
-          <div class="aaa">
-            <div class="zmanim-data-c">
-              <table id="zmanim-table-data">
-                <!-- <% for (let i in zmanim_data) { %>
-                <tr>
-                  <td>
-                    <h2><strong> <%= i %> :</strong></h2>
-                  </td>
-                  <td>
-                    <h2><strong><%= zmanim_data[i] %></strong></h2>
-                  </td>
-                </tr>
-                <% } %> -->
-              </table>
+      <div class="s-m-times">
+        <div class="s-m-right-times-con">
+          <text>זמני היום</text>
+          <div class="s-m-right-times">
+            <table id="zmanim-table-data"></table>
+          </div>
+        </div>
+        <div class="s-m-middle-times-con">
+          <div class="middle-time-title-con">
+            <text>לוח מודעות</text>
+          </div>
+          <div class="messages-con-par">
+            <div class="messages-con">
+              <div class="messages">
+                <div class="message-happy-head-con">
+                  <text>שמחות</text>
+                </div>
+                <div class="message-data"></div>
+              </div>
+              <div class="clip-art-design-con">
+                <div class="clip-art-design"></div>
+              </div>
+              <div class="messages">
+                <div class="message-head-con">
+                  <div class="memorize-candle-left"></div>
+                  <div class="message-title">
+                    <text>לעילוי נשמת</text>
+                  </div>
+                  <div class="memorize-candle-right"></div>
+                </div>
+                <div class="message-data"></div>
+              </div>
             </div>
           </div>
         </div>
-        <div class="middle">
-          <div class="aaa"></div>
-        </div>
-        <div class="left">
-          <div class="aaa"></div>
+        <div class="s-m-left-times-con">
+          <text>זמני שבת</text>
+          <div class="s-m-left-times"></div>
+          <!-- <div class="times-container"></div> -->
         </div>
       </div>
     </div>
