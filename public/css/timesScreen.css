@@ -153,7 +153,8 @@ html {
   background-size: 100% 98%;
 }
 
-.s-m-right-times-con #zmanim-table-data {
+.s-m-right-times-con #zmanim-table-data,
+#shabbat-times-table-data {
   display: flex;
   flex-direction: column;
   height: 100%;

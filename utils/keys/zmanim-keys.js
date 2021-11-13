@@ -11,5 +11,5 @@ module.exports = {
   minchaGedola: "מנחה גדולה",
   minchaKetana: "מנחה קטנה",
   plagHaMincha: "פלג המנחה",
-  sunset: "שקיעה",
+  sunset: "שקיעה"
 };

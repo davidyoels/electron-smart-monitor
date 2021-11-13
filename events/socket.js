@@ -10,22 +10,23 @@ const scheduleJob = (name, expression, callback) => {
 const scheduleZmanimData = (io) => {
   scheduleJob("m-job", "*/10 * * * * *", () => {
     fetchZmanimData().then((zmanim_data) => {
-      io.emit("touch", zmanim_data);
+      // console.log("emit touch", new Date().getSeconds());
+      io.emit("zmanim", zmanim_data);
     });
   });
 };
 
 const scheduleShabatTimesData = (io) => {
   scheduleJob("m-job", "*/10 * * * * *", () => {
-    fetchShabatData().then((zmanim_data) => {
-      // io.emit("touch", zmanim_data);
+    fetchShabatData().then((sahhabat_times_data) => {
+      io.emit("sahhabat_times", sahhabat_times_data);
     });
   });
 };
 
 const initalFetchData = (io) => {
   scheduleZmanimData(io);
-  // scheduleShabatTimesData(io);
+  scheduleShabatTimesData(io);
 };
 
 const createSocketIO = (appServer) => {
