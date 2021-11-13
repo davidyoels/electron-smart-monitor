@@ -45,12 +45,11 @@
     <script>
       var socket = io.connect();
       let counter = 0;
-      socket.on("touch", (data) => {
-        console.log("touch", counter++);
-        zmanim_data = data;
-        let containerTable = `<th></th><th></th>`;
+      socket.on("zmanim", (zmanim_data) => {
+        console.log("zmanim", counter++);
+        let containerZmanimTable = `<th></th><th></th>`;
         for (let i in zmanim_data) {
-          containerTable += `<tr>
+          containerZmanimTable += `<tr>
               <td>
                 <h2>
                   <strong>${i}:</strong>
@@ -63,8 +62,33 @@
               </td>
             </tr>`;
         }
-        console.log(containerTable);
-        document.getElementById("zmanim-table-data").innerHTML = containerTable;
+        document.getElementById("zmanim-table-data").innerHTML =
+          containerZmanimTable;
+      });
+      let counter_times = 0;
+      socket.on("sahhabat_times", (sahhabat_times) => {
+        console.log("sahhabat_times", counter_times++);
+        let containerSahhabatTimesTable = `<th></th><th></th>`;
+        for (let i in sahhabat_times) {
+          if (i == "parashat") {
+            document.getElementById("parasha").innerHTML = sahhabat_times[i];
+          } else {
+            containerSahhabatTimesTable += `<tr>
+                <td>
+                  <h2>
+                    <strong>${i}:</strong>
+                  </h2>
+                </td>
+                <td>
+                  <h2>
+                    <strong>${sahhabat_times[i]}</strong>
+                  </h2>
+                </td>
+              </tr>`;
+          }
+        }
+        document.getElementById("shabbat-times-table-data").innerHTML =
+          containerSahhabatTimesTable;
       });
     </script>
   </head>
@@ -89,7 +113,7 @@
           <div id="time"></div>
         </div>
         <div class="s-m-right-datime">
-          <div id="parasha">פרשת חיי שרה</div>
+          <div id="parasha"></div>
         </div>
         <div class="left">
           <div id="date"></div>
@@ -130,10 +154,11 @@
             </div>
           </div>
         </div>
-        <div class="s-m-left-times-con">
+        <div class="s-m-right-times-con">
           <text>זמני שבת</text>
-          <div class="s-m-left-times"></div>
-          <!-- <div class="times-container"></div> -->
+          <div class="s-m-right-times">
+            <table id="shabbat-times-table-data"></table>
+          </div>
         </div>
       </div>
     </div>
