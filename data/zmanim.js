@@ -7,14 +7,17 @@ let i = 0;
 
 const fetchZmanimData = async () => {
   const date = new Date();
-  // if (i == 0) {
-  //   date.setDate(date.getDate() + 1);
-  //   i = 1;
-  // } else {
-  //   date.setDate(date.getDate() - 1);
-  //   i = 0;
-  // }
+  if (i == 0) {
+    date.setDate(date.getDate() + 1);
+    i = 1;
+  } else {
+    date.setDate(date.getDate() - 1);
+    i = 0;
+  }
   const fixedDate = date.toISOString().split("T")[0];
+  console.log(
+    `${baseApiUrl}/zmanim?cfg=json&geonameid=${geo_location}&date=${fixedDate}`
+  );
   return fetch(
     `${baseApiUrl}/zmanim?cfg=json&geonameid=${geo_location}&date=${fixedDate}`
   )
