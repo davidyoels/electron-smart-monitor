@@ -69,9 +69,46 @@
       socket.on("sahhabat_times", (sahhabat_times) => {
         console.log("sahhabat_times", counter_times++);
         let containerSahhabatTimesTable = `<th></th><th></th>`;
-        for (let i in sahhabat_times) {
+        const sahhabtTimesInHebrew = sahhabat_times["sahhabtTimesInHebrew"];
+        const todayPrayTimeDisplay = sahhabat_times["todayPrayTimeDisplay"];
+        containerSahhabatTimesTable += `<tr>
+              <td>
+                <h2>
+                  <strong>זמני תפילות חול</strong>
+                </h2>
+              </td>
+            </tr>`;
+        for (let i in todayPrayTimeDisplay) {
+          containerSahhabatTimesTable += `<tr>
+              <td>
+                <h2>
+                  <strong>${i}:</strong>
+                </h2>
+              </td>
+              <td>
+                <h2>
+                  <strong>${todayPrayTimeDisplay[i]}</strong>
+                </h2>
+              </td>
+            </tr>`;
+        }
+
+        containerSahhabatTimesTable += `<tr>
+            <td>
+              <h3>--------------------</h3>
+            </td>
+          </tr>`;
+        containerSahhabatTimesTable += `<tr>
+              <td>
+                <h2>
+                  <strong>זמני תפילות שבת</strong>
+                </h2>
+              </td>
+            </tr>`;
+        for (let i in sahhabtTimesInHebrew) {
           if (i == "parashat") {
-            document.getElementById("parasha").innerHTML = sahhabat_times[i];
+            document.getElementById("parasha").innerHTML =
+              sahhabtTimesInHebrew[i];
           } else {
             containerSahhabatTimesTable += `<tr>
                 <td>
@@ -81,12 +118,14 @@
                 </td>
                 <td>
                   <h2>
-                    <strong>${sahhabat_times[i]}</strong>
+                    <strong>${sahhabtTimesInHebrew[i]}</strong>
                   </h2>
                 </td>
               </tr>`;
           }
         }
+        console.log(containerSahhabatTimesTable);
+
         document.getElementById("shabbat-times-table-data").innerHTML =
           containerSahhabatTimesTable;
       });
@@ -155,7 +194,7 @@
           </div>
         </div>
         <div class="s-m-right-times-con">
-          <text>זמני שבת</text>
+          <text>זמני תפילות</text>
           <div class="s-m-right-times">
             <table id="shabbat-times-table-data"></table>
           </div>

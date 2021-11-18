@@ -15,9 +15,7 @@ const fetchZmanimData = async () => {
     i = 0;
   }
   const fixedDate = date.toISOString().split("T")[0];
-  console.log(
-    `${baseApiUrl}/zmanim?cfg=json&geonameid=${geo_location}&date=${fixedDate}`
-  );
+
   return fetch(
     `${baseApiUrl}/zmanim?cfg=json&geonameid=${geo_location}&date=${fixedDate}`
   )

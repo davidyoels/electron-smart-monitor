@@ -178,6 +178,12 @@ tr {
   flex-direction: row;
   width: 100%;
   justify-content: space-between;
+  align-items: center;
+}
+
+tr h3 {
+  color: white;
+  margin: 0;
 }
 
 h2 {
