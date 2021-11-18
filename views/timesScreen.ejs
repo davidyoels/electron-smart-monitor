@@ -11,132 +11,21 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="/css/timesScreen.css" />
-    <title>בית כנסת שירת ישראל</title>
+    <title><%= timeScreenTexts.facilityNameText %></title>
+    <script type="module" src="/js/times-screen/time-screen.js"></script>
+    <script src="/js/times-screen/day-time-display.js"></script>
     <script
       src="https://cdn.socket.io/4.3.2/socket.io.min.js"
       integrity="sha384-KAZ4DtjNhLChOB/hxXuKqhMLYvx3b5MlT55xPEiNmREKRzeEm+RVPlTnAn0ajQNs"
       crossorigin="anonymous"
     ></script>
-    <script type="text/javascript">
-      function display_c() {
-        var refresh = 1000; // Refresh rate in milli seconds
-        mytime = setTimeout("display_ct()", refresh);
-      }
-
-      function display_ct() {
-        var x = new Date();
-        var s = x.getSeconds();
-        var m = x.getMinutes();
-        var h = x.getHours();
-        var textContent =
-          ("0" + h).substr(-2) +
-          ":" +
-          ("0" + m).substr(-2) +
-          ":" +
-          ("0" + s).substr(-2);
-        document.getElementById("time").innerHTML = textContent;
-        display_c();
-      }
-
-      function initialPageSetup() {
-        display_ct();
-      }
-    </script>
-    <script>
-      var socket = io.connect();
-      let counter = 0;
-      socket.on("zmanim", (zmanim_data) => {
-        console.log("zmanim", counter++);
-        let containerZmanimTable = `<th></th><th></th>`;
-        for (let i in zmanim_data) {
-          containerZmanimTable += `<tr>
-              <td>
-                <h2>
-                  <strong>${i}:</strong>
-                </h2>
-              </td>
-              <td>
-                <h2>
-                  <strong>${zmanim_data[i]}</strong>
-                </h2>
-              </td>
-            </tr>`;
-        }
-        document.getElementById("zmanim-table-data").innerHTML =
-          containerZmanimTable;
-      });
-      let counter_times = 0;
-      socket.on("sahhabat_times", (sahhabat_times) => {
-        console.log("sahhabat_times", counter_times++);
-        let containerSahhabatTimesTable = `<th></th><th></th>`;
-        const sahhabtTimesInHebrew = sahhabat_times["sahhabtTimesInHebrew"];
-        const todayPrayTimeDisplay = sahhabat_times["todayPrayTimeDisplay"];
-        containerSahhabatTimesTable += `<tr>
-              <td>
-                <h2>
-                  <strong>זמני תפילות חול</strong>
-                </h2>
-              </td>
-            </tr>`;
-        for (let i in todayPrayTimeDisplay) {
-          containerSahhabatTimesTable += `<tr>
-              <td>
-                <h2>
-                  <strong>${i}:</strong>
-                </h2>
-              </td>
-              <td>
-                <h2>
-                  <strong>${todayPrayTimeDisplay[i]}</strong>
-                </h2>
-              </td>
-            </tr>`;
-        }
-
-        containerSahhabatTimesTable += `<tr>
-            <td>
-              <h3>--------------------</h3>
-            </td>
-          </tr>`;
-        containerSahhabatTimesTable += `<tr>
-              <td>
-                <h2>
-                  <strong>זמני תפילות שבת</strong>
-                </h2>
-              </td>
-            </tr>`;
-        for (let i in sahhabtTimesInHebrew) {
-          if (i == "parashat") {
-            document.getElementById("parasha").innerHTML =
-              sahhabtTimesInHebrew[i];
-          } else {
-            containerSahhabatTimesTable += `<tr>
-                <td>
-                  <h2>
-                    <strong>${i}:</strong>
-                  </h2>
-                </td>
-                <td>
-                  <h2>
-                    <strong>${sahhabtTimesInHebrew[i]}</strong>
-                  </h2>
-                </td>
-              </tr>`;
-          }
-        }
-        console.log(containerSahhabatTimesTable);
-
-        document.getElementById("shabbat-times-table-data").innerHTML =
-          containerSahhabatTimesTable;
-      });
-    </script>
   </head>
   <body onload="initialPageSetup()">
     <div class="s-m-container">
       <div class="s-m-logo">
         <div class="s-m-left-logo"></div>
         <div class="s-m-middle-logo">
-          <text class="pray-name"> בית כנסת שירת ישראל </text>
+          <text class="pray-name"><%= timeScreenTexts.facilityNameText %></text>
         </div>
         <div class="s-m-right-logo"></div>
       </div>
@@ -160,20 +49,20 @@
       </div>
       <div class="s-m-times">
         <div class="s-m-right-times-con">
-          <text>זמני היום</text>
+          <text><%= timeScreenTexts.todayTimesText %></text>
           <div class="s-m-right-times">
             <table id="zmanim-table-data"></table>
           </div>
         </div>
         <div class="s-m-middle-times-con">
           <div class="middle-time-title-con">
-            <text>לוח מודעות</text>
+            <text><%= timeScreenTexts.bulletinBoardText %></text>
           </div>
           <div class="messages-con-par">
             <div class="messages-con">
               <div class="messages">
                 <div class="message-happy-head-con">
-                  <text>שמחות</text>
+                  <text><%= timeScreenTexts.JoysText %></text>
                 </div>
                 <div class="message-data"></div>
               </div>
@@ -184,7 +73,7 @@
                 <div class="message-head-con">
                   <div class="memorize-candle-left"></div>
                   <div class="message-title">
-                    <text>לעילוי נשמת</text>
+                    <text><%= timeScreenTexts.memorializeText %></text>
                   </div>
                   <div class="memorize-candle-right"></div>
                 </div>
@@ -194,7 +83,7 @@
           </div>
         </div>
         <div class="s-m-right-times-con">
-          <text>זמני תפילות</text>
+          <text><%= timeScreenTexts.prayTimesText %></text>
           <div class="s-m-right-times">
             <table id="shabbat-times-table-data"></table>
           </div>

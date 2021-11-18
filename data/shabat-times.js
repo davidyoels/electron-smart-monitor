@@ -7,7 +7,7 @@ const {
   shabbatDayTimes,
   shabbatEveningTimes
 } = require("../utils/keys/static-shabbat-keys");
-const { getTodayPrayTimes } = require("../data/pray-day-times");
+const { getTodayPrayTimes } = require("./pray-day-times");
 
 const fetchShabatData = async () => {
   return fetch(`${baseApiUrl}/shabbat?cfg=json&geonameid=${geo_location}&&M=on`)
