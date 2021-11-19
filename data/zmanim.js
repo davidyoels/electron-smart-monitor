@@ -2,11 +2,11 @@ const zmanimKeys = require("../utils/keys/zmanim-keys");
 const { geo_location } = require("../utils/consts/geolocation");
 const fetch = require("electron-fetch").default;
 const { baseApiUrl } = require("../utils/consts/baseApiUrl");
+const { date } = require("pizzip/js/defaults");
 
 let i = 0;
 
-const fetchZmanimData = async () => {
-  const date = new Date();
+const generatePreviousDayDate = (date) => {
   if (i == 0) {
     date.setDate(date.getDate() + 1);
     i = 1;
@@ -14,7 +14,14 @@ const fetchZmanimData = async () => {
     date.setDate(date.getDate() - 1);
     i = 0;
   }
-  const fixedDate = date.toISOString().split("T")[0];
+  return date;
+};
+
+const fetchZmanimData = async () => {
+  const date = new Date();
+  let fixedDate;
+  // fixedDate = generatePreviousDayDate(date);
+  fixedDate = date.toISOString().split("T")[0];
 
   return fetch(
     `${baseApiUrl}/zmanim?cfg=json&geonameid=${geo_location}&date=${fixedDate}`

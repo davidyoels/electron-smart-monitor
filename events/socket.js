@@ -8,16 +8,23 @@ const scheduleJob = (name, expression, callback) => {
 };
 
 const scheduleZmanimData = (io) => {
-  scheduleJob("m-job", "*/10 * * * * *", () => {
+  fetchZmanimData().then((zmanim_data) => {
+    console.log(new Date().toLocaleTimeString());
+    io.emit("zmanim", zmanim_data);
+  });
+  scheduleJob("m-job", "01 00 00 * * *", () => {
     fetchZmanimData().then((zmanim_data) => {
-      // console.log("emit touch", new Date().getSeconds());
+      console.log(new Date().toLocaleTimeString());
       io.emit("zmanim", zmanim_data);
     });
   });
 };
 
 const scheduleShabatTimesData = (io) => {
-  scheduleJob("m-job", "*/10 * * * * *", () => {
+  fetchShabatData().then((sahhabat_times_data) => {
+    io.emit("sahhabat_times", sahhabat_times_data);
+  });
+  scheduleJob("m-job", "01 00 00 * * 7", () => {
     fetchShabatData().then((sahhabat_times_data) => {
       io.emit("sahhabat_times", sahhabat_times_data);
     });
