@@ -1,0 +1,239 @@
+/*--------------- <page-conf> ---------------*/
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #2d1703;
+}
+.s-m-container,
+body,
+html {
+  height: 100%;
+}
+
+.flex {
+  display: flex;
+}
+
+/*--------------- </page-conf> ---------------*/
+
+/*--------------- </page-conf> ---------------*/
+
+.s-m-container {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  width: 100%;
+}
+
+/*--------------- <logo section> ---------------*/
+
+/*------- <date time container> -------*/
+.s-m-logo {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  flex-basis: 8%;
+  justify-content: space-around;
+  align-items: center;
+}
+/*------- <date time section> -------*/
+
+.s-m-left-logo {
+  display: flex;
+  flex-basis: 33%;
+  height: 100%;
+  /* background-color: red; */
+}
+
+.s-m-middle-logo {
+  display: flex;
+  height: 80%;
+  align-items: center;
+  justify-content: center;
+  flex-basis: 33%;
+}
+
+.pray-name {
+  color: #e2a917;
+  font-size: 16px;
+  font-size: 3vw;
+}
+
+.s-m-right-logo {
+  display: flex;
+  height: 100%;
+  flex-basis: 33%;
+}
+
+/*--------------- </logo section> ---------------*/
+
+/*--------------- <date time section> ---------------*/
+
+/*------- <date time container> -------*/
+.s-m-date-time {
+  display: flex;
+  flex-basis: 6%;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-around;
+  align-items: center;
+  font-family: "Assistant";
+  background: #b58d00;
+}
+/*------- <date time section> -------*/
+
+.s-m-left-datime {
+  display: flex;
+  flex-basis: 33%;
+  height: 100%;
+  font-weight: bold;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  font-size: 2vw;
+  font-family: "Assistant";
+  color: white;
+}
+
+.s-m-middle-datime {
+  display: flex;
+  height: 80%;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  flex-basis: 33%;
+  font-size: 16px;
+  font-size: 2vw;
+  font-family: "Assistant";
+  color: white;
+}
+
+.s-m-right-datime {
+  display: flex;
+  height: 100%;
+  flex-basis: 33%;
+  align-items: center;
+  justify-content: center;
+  font-family: "Assistant";
+  font-weight: bold;
+  font-size: 16px;
+  font-size: 2vw;
+  color: white;
+}
+
+/*--------------- </date time section> ---------------*/
+
+/*--------------- <edititon times section> ---------------*/
+
+.s-m-times {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 86%;
+  width: 100%;
+}
+
+.title {
+  display: flex;
+  flex-direction: row;
+  flex-basis: 25%;
+  align-items: center;
+  justify-content: space-around;
+  height: 100%;
+}
+
+text {
+  font-family: "Assistant";
+  font-weight: bold;
+  font-size: 16px;
+  font-size: 3vw;
+  color: white;
+}
+
+.edit-name {
+  display: flex;
+  flex-direction: row;
+  flex-basis: 25%;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+}
+
+.add-name-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50%;
+  width: 50%;
+}
+
+.add-name-container text {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.add {
+  display: flex;
+  flex-direction: row;
+  flex-basis: 25%;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.addition-submit-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50%;
+  width: 50%;
+}
+
+.clip-art-container {
+  display: flex;
+  flex-direction: row;
+  flex-basis: 25%;
+  justify-content: center;
+  height: 100%;
+}
+
+.clip-art-design {
+  display: flex;
+  height: 60%;
+  align-self: center;
+  width: 30%;
+  background-image: url("../img/clip-art.png");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+/*--------------- </edititon times section> ---------------*/
+
+/*---------- <submition input section> ----------*/
+
+.submit-new-times {
+  display: flex;
+  flex-basis: 10%;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+input[type="text"] {
+  width: 15vw;
+  height: 15vj;
+  font-family: "Assistant";
+  font-weight: bold;
+  font-size: 16px;
+  font-size: 3vw;
+  background: none;
+  border-radius: 15;
+  color: white;
+  border: none;
+  text-align: center;
+}
+
+/*---------- </submition input section> ----------*/
+
+/*--------------- </edititon times section> ---------------*/
