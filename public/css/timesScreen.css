@@ -181,6 +181,28 @@ tr {
   align-items: center;
 }
 
+.title-container {
+  display: flex;
+  flex-direction: row;
+  margin: 40px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+tr .title {
+  display: flex;
+  flex-direction: row;
+  flex-basis: 70%;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.clock-icon-container {
+  display: flex;
+  flex-basis: 15%;
+}
+
 tr h3 {
   color: white;
   margin: 0;

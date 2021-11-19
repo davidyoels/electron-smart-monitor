@@ -31,7 +31,6 @@ const fetchShabatData = async () => {
           );
 
           if (dataItemCategory == "havdalah") {
-            console.log(shabbatDayTimes);
             for (let shabbatDayTime of shabbatDayTimes) {
               sahhabtTimesInHebrew[shabbatDayTime["text"]] =
                 shabbatDayTime["time"];

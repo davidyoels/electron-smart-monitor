@@ -23,8 +23,8 @@
     />
     <link rel="stylesheet" href="/css/addShabatTimes.css" />
     <title><%= timeScreenTexts.facilityNameText %></title>
-    <script src="/js/times-screen/day-time-display.js"></script>
-    <script src="/js/add-shabbat-times/add-shabbat-times.js"></script>
+    <script src="/js/day-time-display.js"></script>
+    <script src="/js/add-shabbat-times.js"></script>
     <script
       src="https://cdn.socket.io/4.3.2/socket.io.min.js"
       integrity="sha384-KAZ4DtjNhLChOB/hxXuKqhMLYvx3b5MlT55xPEiNmREKRzeEm+RVPlTnAn0ajQNs"
@@ -59,13 +59,13 @@
         </div>
       </div>
       <div class="s-m-times">
-        <div class="evening-shabbat-times">
-          <div class="evening-shabbat-times-center">
-            <div class="evening-title-container">
+        <div class="shabbat-times">
+          <div class="shabbat-times-center">
+            <div class="title-container">
               <text>ערב שבת</text>
             </div>
-            <div class="evening-times-container">
-              <div class="f-evening-edit-section">
+            <div class="times-container">
+              <div class="edit-section">
                 <table id="evening-times-edition"></table>
               </div>
             </div>
@@ -74,13 +74,13 @@
         <div class="clip-art-container">
           <div class="clip-art-design"></div>
         </div>
-        <div class="evening-shabbat-times">
-          <div class="evening-shabbat-times-center">
-            <div class="evening-title-container">
+        <div class="shabbat-times">
+          <div class="shabbat-times-center">
+            <div class="title-container">
               <text>וביום השבת</text>
             </div>
-            <div class="evening-times-container">
-              <div class="f-evening-edit-section">
+            <div class="times-container">
+              <div class="edit-section">
                 <table id="day-times-edition"></table>
               </div>
             </div>
