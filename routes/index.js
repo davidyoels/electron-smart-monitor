@@ -16,4 +16,14 @@ router.get("/timesScreen", function (req, res, next) {
   });
 });
 
+router.get("/addShabbatTimes", function (req, res, next) {
+  res.render("addShabatTimes", {
+    timeScreenTexts: timeScreenTexts
+  });
+});
+
+router.post("/addShabatTimes", function (req, res, next) {
+  console.log("/POST");
+});
+
 module.exports = router;
