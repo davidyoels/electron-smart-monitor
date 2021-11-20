@@ -339,7 +339,33 @@ h2 {
 .s-m-middle-times-con .message-data {
   display: flex;
   flex-basis: 77%;
+  align-items: center;
+  justify-content: center;
   width: 100%;
+}
+
+.message-data-container {
+  display: flex;
+  flex-direction: row;
+  height: 80%;
+  width: 90%;
+}
+
+.message-data-content {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  flex-basis: 50%;
+  align-items: center;
+  justify-content: center;
+}
+
+.message-data-container text {
+  font-family: "Assistant";
+  font-weight: bold;
+  font-size: 16px;
+  font-size: 1.5vw;
+  color: white;
 }
 
 .s-m-middle-times-con .clip-art-design-con {

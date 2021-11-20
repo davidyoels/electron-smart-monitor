@@ -12,15 +12,16 @@
     />
     <link rel="stylesheet" href="/css/timesScreen.css" />
     <title><%= timeScreenTexts.facilityNameText %></title>
-    <script type="module" src="/js/times-screen/time-screen.js"></script>
-    <script src="/js/times-screen/day-time-display.js"></script>
+    <script type="module" src="/js/time-screen.js"></script>
+    <script src="/js/memorize-names.js"></script>
+    <script src="/js/day-time-display.js"></script>
     <script
       src="https://cdn.socket.io/4.3.2/socket.io.min.js"
       integrity="sha384-KAZ4DtjNhLChOB/hxXuKqhMLYvx3b5MlT55xPEiNmREKRzeEm+RVPlTnAn0ajQNs"
       crossorigin="anonymous"
     ></script>
   </head>
-  <body onload="initialPageSetup()">
+  <body onload="initialPageSetup(); getMemorizeNames()">
     <div class="s-m-container">
       <div class="s-m-logo">
         <div class="s-m-left-logo"></div>
@@ -77,7 +78,18 @@
                   </div>
                   <div class="memorize-candle-right"></div>
                 </div>
-                <div class="message-data"></div>
+                <div id="memorize-names" class="message-data">
+                  <div class="message-data-container">
+                    <div
+                      id="memorial-names-right"
+                      class="message-data-content"
+                    ></div>
+                    <div
+                      id="memorial-names-left"
+                      class="message-data-content"
+                    ></div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

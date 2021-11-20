@@ -133,6 +133,13 @@ html {
   width: 100%;
 }
 
+.form {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
+
 .title {
   display: flex;
   flex-direction: row;

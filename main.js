@@ -14,10 +14,24 @@ function createWindow() {
     }
   });
 
+  // secondScreen = new BrowserWindow({
+  //   width: 800,
+  //   height: 600,
+  //   autoHideMenuBar: true,
+  //   webPreferences: {
+  //     nodeIntegration: true
+  //   }
+  // });
+
   mainWindow.loadURL("http://localhost:3000");
   mainWindow.on("closed", function () {
     mainWindow = null;
   });
+
+  // secondScreen.loadURL("http://localhost:3000/addMemorizeScreen");
+  // secondScreen.on("closed", function () {
+  //   mainWindow = null;
+  // });
 }
 
 app.on("ready", createWindow);
