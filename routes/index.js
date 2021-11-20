@@ -31,6 +31,12 @@ router.get("/addMemorizeScreen", function (req, res, next) {
   });
 });
 
+router.get("/addJoyNewsScreen", function (req, res, next) {
+  res.render("addJoyNewsScreen", {
+    timeScreenTexts: timeScreenTexts
+  });
+});
+
 router.get("/get-memoriale-names", async (req, res, next) => {
   readFileContent("memorial-names", (data) => {
     res.status(200).json(data);
