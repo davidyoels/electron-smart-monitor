@@ -1,9 +1,12 @@
 const express = require("express");
 var app = express();
-
 var path = require("path");
 var bodyParser = require("body-parser");
-var index = require("./routes/index");
+
+// index route
+var index = require("./routes/index.route");
+
+// socket-io
 const { createSocketIO } = require("./events/socket");
 
 app.set("views", path.join(__dirname, "views"));
@@ -38,7 +41,7 @@ app.use(function (req, res, next) {
   next();
 });
 
-app.use("/", index);
+app.use(index);
 
 app.use(function (req, res, next) {
   var err = new Error("Not Found");
