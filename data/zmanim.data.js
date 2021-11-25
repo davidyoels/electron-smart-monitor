@@ -3,6 +3,7 @@ const { geo_location } = require("../utils/consts/geolocation");
 const fetch = require("electron-fetch").default;
 const { baseApiUrl } = require("../utils/consts/baseApiUrl");
 const { date } = require("pizzip/js/defaults");
+const { getTodayDateFormat } = require("../helpers/moment-times");
 
 let i = 0;
 
@@ -18,13 +19,9 @@ const generatePreviousDayDate = (date) => {
 };
 
 const fetchZmanimData = async () => {
-  const date = new Date();
-  let fixedDate;
-  // fixedDate = generatePreviousDayDate(date);
-  fixedDate = date.toISOString().split("T")[0];
-
+  const todayDate = getTodayDateFormat();
   return fetch(
-    `${baseApiUrl}/zmanim?cfg=json&geonameid=${geo_location}&date=${fixedDate}`
+    `${baseApiUrl}/zmanim?cfg=json&geonameid=${geo_location}&date=${todayDate}`
   )
     .then((resonse) => resonse.json())
     .then((data) => {

@@ -1,7 +1,7 @@
 const socketIO = require("socket.io");
 const schedule = require("node-schedule");
-const { fetchZmanimData } = require("../data/zmanim");
-const { fetchShabatData } = require("../data/shabat-times");
+const { fetchZmanimData } = require("../data/zmanim.data");
+const { fetchShabatData } = require("../data/shabat-times.data");
 
 const scheduleJob = (name, expression, callback) => {
   schedule.scheduleJob(name, expression, callback);
