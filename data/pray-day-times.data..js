@@ -10,7 +10,7 @@ const getTodayPrayTimes = () => {
     },
     {
       key: "ערבית",
-      value: "07:30"
+      value: "19:30"
     }
   ];
 };

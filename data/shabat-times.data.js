@@ -20,9 +20,9 @@ const fetchShabatData = async () => {
       for (let dataItem of dataItems) {
         dataItemCategory = dataItem["category"];
         shabbatTimeKey = shabbatTimesKeys[dataItemCategory];
-        if (dataItemCategory == "parashat") {
+        if (dataItemCategory == "parashat" || dataItemCategory == "mevarchim") {
           shabbatTimeValue = String(dataItem["hebrew"]);
-          sahhabtTimesInHebrew["parashat"] = shabbatTimeValue;
+          sahhabtTimesInHebrew[dataItemCategory] = shabbatTimeValue;
         } else {
           shabbatTimeValue = String(dataItem["title"]);
           shabbatTimeValue = shabbatTimeValue.substring(
@@ -51,6 +51,7 @@ const fetchShabatData = async () => {
       for (let todayPrayTime of todayPrayTimes) {
         todayPrayTimeDisplay[todayPrayTime["key"]] = todayPrayTime["value"];
       }
+
       return {
         sahhabtTimesInHebrew: sahhabtTimesInHebrew,
         todayPrayTimeDisplay: todayPrayTimeDisplay
