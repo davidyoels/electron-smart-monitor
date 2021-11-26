@@ -20,8 +20,14 @@
       integrity="sha384-KAZ4DtjNhLChOB/hxXuKqhMLYvx3b5MlT55xPEiNmREKRzeEm+RVPlTnAn0ajQNs"
       crossorigin="anonymous"
     ></script>
+    <script>
+      function init() {
+        initialPageSetup();
+        getMemorizeNames();
+      }
+    </script>
   </head>
-  <body onload="initialPageSetup(); getMemorizeNames()">
+  <body onload="init()">
     <div class="s-m-container">
       <%- include('partials/header-page.ejs') %>
       <div class="s-m-times">
@@ -77,6 +83,7 @@
           </div>
         </div>
       </div>
+    </div>
     </div>
   </body>
 </html>

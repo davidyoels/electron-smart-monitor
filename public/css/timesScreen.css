@@ -144,7 +144,7 @@ html {
 .s-m-right-times-con .s-m-right-times {
   display: flex;
   height: 95%;
-  width: 90%;
+  width: 95%;
   align-items: center;
   font-size: 16px;
   font-size: 2vw;
@@ -170,7 +170,7 @@ tbody {
   align-self: center;
   align-items: center;
   height: 90%;
-  width: 80%;
+  width: 85%;
 }
 
 tr {
@@ -416,7 +416,7 @@ h2 {
 .s-m-left-times {
   display: flex;
   height: 95%;
-  width: 90%;
+  width: 95%;
   align-items: center;
   font-size: 16px;
   font-size: 2vw;

@@ -4,18 +4,18 @@ const shabbatEveningTimes = [
     time: "מיד לאחר מנחה"
   },
   {
-    text: "שיעור מפי הרב גד קדוש",
+    text: "שיעור מפי הרב",
     time: "בזמן"
   },
   {
-    text: "ערבית (ערב שבת)",
+    text: "ערבית",
     time: "בזמן"
   }
 ];
 
 const shabbatDayTimes = [
   {
-    text: "שחרית (שבת)",
+    text: "שחרית",
     time: "08:00"
   },
   {
@@ -23,7 +23,7 @@ const shabbatDayTimes = [
     time: "לאחר התפילה"
   },
   {
-    text: "מנחה (שבת)",
+    text: "מנחה",
     time: "4:10"
   }
 ];
