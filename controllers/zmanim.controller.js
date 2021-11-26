@@ -1,5 +1,5 @@
 const timeScreenTexts = require("../utils/i18n/he-IL");
-const { fetchZmanimData } = require("../data/zmanim");
+const { fetchZmanimData } = require("../data/zmanim.data");
 
 const dayTimesScreen = (req, res, next) => {
   fetchZmanimData().then((zmanim_data) => {
