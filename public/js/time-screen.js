@@ -93,3 +93,7 @@ socket.on("sahhabat_times", (sahhabat_times) => {
   document.getElementById("shabbat-times-table-data").innerHTML =
     containerSahhabatTimesTable;
 });
+
+socket.on("today_hebrew_date", (todayHebrewDate) => {
+  document.getElementById("today-herbew-date").innerHTML = todayHebrewDate;
+});

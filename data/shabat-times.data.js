@@ -1,4 +1,3 @@
-// const zmanimKeys = require("../utils/keys/zmanim-keys");
 const { geo_location } = require("../utils/consts/geolocation");
 const fetch = require("electron-fetch").default;
 const { baseApiUrl } = require("../utils/consts/baseApiUrl");
