@@ -6,6 +6,13 @@ const addJoysNewsScreen = (req, res, next) => {
   });
 };
 
+const getJoysNews = async (req, res, next) => {
+  readFileContent("joys-news", (data) => {
+    res.status(200).json(data);
+  });
+};
+
 module.exports = {
-  addJoysNewsScreen: addJoysNewsScreen
+  addJoysNewsScreen: addJoysNewsScreen,
+  getJoysNews: getJoysNews
 };
