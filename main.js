@@ -28,7 +28,7 @@ function createWindow() {
     mainWindow = null;
   });
 
-  // secondScreen.loadURL("http://localhost:3000/addMemorizeScreen");
+  // secondScreen.loadURL("http://localhost:3000/memorial/addMemorialScreen");
   // secondScreen.on("closed", function () {
   //   mainWindow = null;
   // });
