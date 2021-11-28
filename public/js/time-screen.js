@@ -26,8 +26,10 @@ socket.on("zmanim", (zmanim_data) => {
 socket.on("sahhabat_times", (sahhabat_times) => {
   console.log("sahhabat_times", counter_times++);
   let containerSahhabatTimesTable = `<th></th><th></th>`;
+  let containerholidaysTimes = ``;
   const sahhabtTimesInHebrew = sahhabat_times["sahhabtTimesInHebrew"];
   const todayPrayTimeDisplay = sahhabat_times["todayPrayTimeDisplay"];
+  const holidaysTimesInHeberw = sahhabat_times["holidaysTimesInHeberw"];
 
   containerSahhabatTimesTable += `<tr class="title-container">
       <td class="clock-icon-container">
@@ -91,8 +93,17 @@ socket.on("sahhabat_times", (sahhabat_times) => {
         </tr>`;
     }
   }
+
+  for (let i in holidaysTimesInHeberw) {
+    containerholidaysTimes += `<text>
+    ${holidaysTimesInHeberw[i]}
+    </text>
+  </tr>`;
+  }
+
   document.getElementById("shabbat-times-table-data").innerHTML =
     containerSahhabatTimesTable;
+  document.getElementById("bottom-news").innerHTML = containerholidaysTimes;
 });
 
 socket.on("today_hebrew_date", (todayHebrewDate) => {
