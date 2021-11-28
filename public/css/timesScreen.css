@@ -30,7 +30,7 @@ html {
   display: flex;
   flex-direction: row;
   width: 100%;
-  flex-basis: 8%;
+  flex: 8;
   justify-content: space-around;
   align-items: center;
 }
@@ -70,7 +70,7 @@ html {
 /*------- <date time container> -------*/
 .s-m-date-time {
   display: flex;
-  flex-basis: 6%;
+  flex: 6;
   display: flex;
   flex-direction: row;
   width: 100%;
@@ -127,7 +127,7 @@ html {
 .s-m-times {
   display: flex;
   flex-direction: row;
-  flex: 80%;
+  flex: 80;
 }
 
 .s-m-right-times-con {
@@ -426,3 +426,32 @@ h2 {
 }
 
 /*--------------- </times section> ---------------*/
+
+/*-- --*/
+
+.bottom-news-container {
+  display: flex;
+  flex-direction: row;
+  flex: 6;
+  height: 100%;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.bottom-news {
+  display: flex;
+  flex-direction: row;
+  height: 90%;
+  width: 100%;
+  background: #b58d00;
+  align-items: center;
+  justify-content: center;
+}
+
+.bottom-news text {
+  font-family: "Assistant";
+  font-weight: bold;
+  font-size: 16px;
+  font-size: 2vw;
+  color: white;
+}

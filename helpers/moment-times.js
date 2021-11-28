@@ -14,8 +14,23 @@ const getTodayDateFormat = () => {
   return moment().format("YYYY-MM-DD");
 };
 
+const getCurrentYear = () => {
+  return moment().year();
+};
+
+const getCurrentMonth = () => {
+  return moment().year();
+};
+
+const getCurrentDay = () => {
+  return moment().year();
+};
+
 module.exports = {
   getTodayDate: getTodayDate,
   getTodayDateFormat: getTodayDateFormat,
-  getCurrentTime: getCurrentTime
+  getCurrentTime: getCurrentTime,
+  getCurrentYear: getCurrentYear,
+  getCurrentMonth: getCurrentMonth,
+  getCurrentDay: getCurrentDay
 };
