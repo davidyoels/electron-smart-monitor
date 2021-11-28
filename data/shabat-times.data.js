@@ -9,6 +9,7 @@ const {
 const { getTodayPrayTimes } = require("./pray-day-times.data.");
 
 const fetchShabatData = async () => {
+  console.log(`${baseApiUrl}/shabbat?cfg=json&geonameid=${geo_location}&&M=on`);
   return fetch(`${baseApiUrl}/shabbat?cfg=json&geonameid=${geo_location}&&M=on`)
     .then((resonse) => resonse.json())
     .then((data) => {
@@ -20,7 +21,8 @@ const fetchShabatData = async () => {
       for (let dataItem of dataItems) {
         dataItemCategory = dataItem["category"];
         shabbatTimeKey = shabbatTimesKeys[dataItemCategory];
-        if (dataItemCategory == "parashat" || dataItemCategory == "mevarchim") {
+        if (!Object.keys(shabbatTimesKeys).includes(dataItemCategory)) continue;
+        if (dataItemCategory == "parashat") {
           shabbatTimeValue = String(dataItem["hebrew"]);
           sahhabtTimesInHebrew[dataItemCategory] = shabbatTimeValue;
         } else {

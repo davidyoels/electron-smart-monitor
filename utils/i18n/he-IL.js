@@ -1,4 +1,4 @@
-const facilityNameText = "בית כנסת זכרון משה";
+const facilityNameText = "בית כנסת שירת ישראל";
 const todayTimesText = "זמני היום";
 const bulletinBoardText = "לוח מודעות";
 const JoysText = "שמחות";
