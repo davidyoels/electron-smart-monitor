@@ -74,10 +74,8 @@ socket.on("sahhabat_times", (sahhabat_times) => {
 
   for (let i in sahhabtTimesInHebrew) {
     if (i == "parashat") {
-      document.getElementById("parasha").innerHTML += sahhabtTimesInHebrew[i];
+      document.getElementById("parasha").innerHTML = sahhabtTimesInHebrew[i];
     } else if (i == "mevarchim") {
-      document.getElementById("parasha").innerHTML += sahhabtTimesInHebrew[i];
-      document.getElementById("parasha").innerHTML += " · ";
     } else {
       containerSahhabatTimesTable += `<tr>
           <td>

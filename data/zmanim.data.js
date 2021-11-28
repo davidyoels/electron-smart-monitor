@@ -31,6 +31,7 @@ const fetchZmanimData = async () => {
       let time;
       let newTime = new Date();
       for (time in times) {
+        if (!Object.keys(zmanimKeys).includes(time)) continue;
         extractHebrewKey = zmanimKeys[time];
         if (extractHebrewKey) {
           newTime = new Date(times[time]);
