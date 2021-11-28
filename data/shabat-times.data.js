@@ -57,7 +57,6 @@ const fetchShabatData = async () => {
         todayPrayTimeDisplay[todayPrayTime["key"]] = todayPrayTime["value"];
       }
 
-      console.log(holidaysTimesInHeberw);
       return {
         sahhabtTimesInHebrew: sahhabtTimesInHebrew,
         todayPrayTimeDisplay: todayPrayTimeDisplay,
