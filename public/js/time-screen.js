@@ -105,6 +105,8 @@ socket.on("sahhabat_times", (sahhabat_times) => {
 
   document.getElementById("shabbat-times-table-data").innerHTML =
     containerSahhabatTimesTable;
+  document.getElementById("shabbat-times-table-data").innerHTML +=
+    containerSahhabatTimesTable;
   // document.getElementById("bottom-news").innerHTML = containerholidaysTimes;
 });
 
