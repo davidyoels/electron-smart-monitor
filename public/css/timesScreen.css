@@ -182,8 +182,10 @@ tr {
 }
 
 td {
+  word-wrap: break-all;
   padding: 5px;
 }
+
 .title-container {
   display: flex;
   flex-direction: row;
@@ -213,6 +215,7 @@ tr h3 {
 
 h2 {
   margin: 0;
+  word-wrap: break-word;
   font-size: 3.6vmin;
   text-shadow: 2px 2px #000000;
   color: white;
@@ -483,7 +486,6 @@ h2 {
 
 .track {
   position: absolute;
-  white-space: nowrap;
   width: 100%;
   will-change: transform;
   animation: marquee 40s linear infinite;
