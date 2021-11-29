@@ -21,6 +21,8 @@ socket.on("zmanim", (zmanim_data) => {
       </tr>`;
   }
   document.getElementById("zmanim-table-data").innerHTML = containerZmanimTable;
+  document.getElementById("zmanim-table-data").innerHTML +=
+    containerZmanimTable;
 });
 
 socket.on("sahhabat_times", (sahhabat_times) => {
@@ -102,6 +104,8 @@ socket.on("sahhabat_times", (sahhabat_times) => {
   }
 
   document.getElementById("shabbat-times-table-data").innerHTML =
+    containerSahhabatTimesTable;
+  document.getElementById("shabbat-times-table-data").innerHTML +=
     containerSahhabatTimesTable;
   // document.getElementById("bottom-news").innerHTML = containerholidaysTimes;
 });
