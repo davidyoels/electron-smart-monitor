@@ -126,7 +126,7 @@ html {
 
 .s-m-times {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   flex: 80;
 }
 
@@ -134,11 +134,12 @@ html {
   display: flex;
   flex-direction: column;
   height: 100%;
-  flex-basis: 33%;
+  flex-basis: 50%;
   align-self: center;
   align-items: center;
   justify-content: center;
   font-weight: bold;
+  overflow: hidden;
 }
 
 .s-m-right-times-con .s-m-right-times {
@@ -181,6 +182,10 @@ tr {
   align-items: center;
 }
 
+td {
+  padding: 5px;
+}
+
 .title-container {
   display: flex;
   flex-direction: row;
@@ -210,7 +215,7 @@ tr h3 {
 
 h2 {
   margin: 0;
-  font-size: 3.6vmin;
+  font-size: 6vmin;
   text-shadow: 2px 2px #000000;
   color: white;
 }
@@ -454,4 +459,43 @@ h2 {
   font-size: 16px;
   font-size: 2vw;
   color: white;
+}
+
+.top-times-section {
+  display: flex;
+  flex-direction: row;
+  flex: 3;
+  width: 100%;
+}
+
+.bottom-joys-section {
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+  width: 100%;
+}
+
+.marquee {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  height: 95%;
+  overflow: hidden;
+}
+
+.track {
+  position: absolute;
+  white-space: nowrap;
+  width: 100%;
+  will-change: transform;
+  animation: marquee 32s linear infinite;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateY(0%);
+  }
+  to {
+    transform: translateY(-50%);
+  }
 }

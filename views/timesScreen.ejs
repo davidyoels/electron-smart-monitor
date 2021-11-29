@@ -31,13 +31,26 @@
     <div class="s-m-container">
       <%- include('partials/header-page.ejs') %>
       <div class="s-m-times">
-        <div class="s-m-right-times-con">
-          <text><%= timeScreenTexts.todayTimesText %></text>
-          <div class="s-m-right-times">
-            <table id="zmanim-table-data"></table>
+        <div class="top-times-section">
+          <div class="s-m-right-times-con">
+            <text><%= timeScreenTexts.todayTimesText %></text>
+            <div class="s-m-right-times">
+              <div class="marquee">
+                <div class="track">
+                  <table id="zmanim-table-data"></table>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="s-m-right-times-con">
+            <text><%= timeScreenTexts.prayTimesText %></text>
+            <div class="s-m-right-times">
+              <table id="shabbat-times-table-data"></table>
+            </div>
           </div>
         </div>
-        <div class="s-m-middle-times-con">
+        <div class="bottom-joys-section"></div>
+        <!-- <div class="s-m-middle-times-con">
           <div class="middle-time-title-con">
             <text><%= timeScreenTexts.bulletinBoardText %></text>
           </div>
@@ -75,13 +88,7 @@
               </div>
             </div>
           </div>
-        </div>
-        <div class="s-m-right-times-con">
-          <text><%= timeScreenTexts.prayTimesText %></text>
-          <div class="s-m-right-times">
-            <table id="shabbat-times-table-data"></table>
-          </div>
-        </div>
+        </div> -->
       </div>
       <!-- <div class="bottom-news-container">
         <div id="bottom-news" class="bottom-news"></div>
