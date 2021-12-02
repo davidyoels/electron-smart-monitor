@@ -1,21 +1,13 @@
-const getMemorizeNames = () => {
-  fetch("/memorial/getJoysNews")
+const getJoysNews = () => {
+  fetch("/joys-news/get-joys-news")
     .then((response) => response.json())
     .then((data) => {
-      const middleMemrialNames = data.memorizeNames.length / 2;
-      let memorial_names_right = "";
-      let memorial_names_left = "";
-      for (let index in data.memorizeNames) {
-        if (index < middleMemrialNames) {
-          memorial_names_right += `<text>${data.memorizeNames[index].name}</text>`;
-        } else {
-          memorial_names_left += `<text>${data.memorizeNames[index].name}</text>`;
-        }
+      let joys_news_data = "";
+      for (let index in data.joysNews) {
+        joys_news_data += `<text>${data.joysNews[index].name}</text>`;
       }
-
-      // document.getElementById("joys-news-right").innerHTML =
-      //   memorial_names_right;
-      // document.getElementById("joys-news-left").innerHTML = memorial_names_left;
-      // id="memorial-names-right"
+      console.log(joys_news_data);
+      document.getElementById("joys-news-data").innerHTML = joys_news_data;
+      document.getElementById("joys-news-data").innerHTML += joys_news_data;
     });
 };

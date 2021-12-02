@@ -64,7 +64,7 @@ socket.on("sahhabat_times", (sahhabat_times) => {
 
   containerSahhabatTimesTable += `<tr class="title-container">
     <td class="clock-icon-container">
-      <img style="margin: 0" height="40" width="40" src="../../img/clock-icon.png" />
+      <img style="margin: 0;" height="40" width="40" src="../../img/clock-icon.png" />
     </td>
     <td class="title">
       <h2>

@@ -15,6 +15,7 @@
     <script type="module" src="/js/time-screen.js"></script>
     <script src="/js/memorize-names.js"></script>
     <script src="/js/day-time-display.js"></script>
+    <script src="/js/joys-news.js"></script>
     <script
       src="https://cdn.socket.io/4.3.2/socket.io.min.js"
       integrity="sha384-KAZ4DtjNhLChOB/hxXuKqhMLYvx3b5MlT55xPEiNmREKRzeEm+RVPlTnAn0ajQNs"
@@ -24,6 +25,7 @@
       function init() {
         initialPageSetup();
         getMemorizeNames();
+        getJoysNews();
       }
     </script>
   </head>
@@ -46,10 +48,23 @@
           <div class="messages-con-par">
             <div class="messages-con">
               <div class="messages">
-                <div class="message-happy-head-con">
-                  <text><%= timeScreenTexts.JoysText %></text>
+                <div class="message-head-con-joys">
+                  <div class="message-title">
+                    <text><%= timeScreenTexts.JoysText %></text>
+                  </div>
                 </div>
-                <div class="message-data"></div>
+                <div id="memorize-names" class="message-data">
+                  <div class="message-data-container">
+                    <div class="marquee">
+                      <div class="track">
+                        <div
+                          id="joys-news-data"
+                          class="message-data-content"
+                        ></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
               <div class="clip-art-design-con">
                 <div class="clip-art-design"></div>
@@ -64,14 +79,14 @@
                 </div>
                 <div id="memorize-names" class="message-data">
                   <div class="message-data-container">
-                    <div
-                      id="memorial-names-right"
-                      class="message-data-content"
-                    ></div>
-                    <div
-                      id="memorial-names-left"
-                      class="message-data-content"
-                    ></div>
+                    <div class="marquee">
+                      <div class="track">
+                        <div
+                          id="memorial-names-data"
+                          class="message-data-content"
+                        ></div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
