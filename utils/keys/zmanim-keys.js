@@ -12,6 +12,8 @@ module.exports = {
   minchaGedola: "מנחה גדולה",
   minchaKetana: "מנחה קטנה",
   plagHaMincha: "פלג המנחה",
+  tzeit42min: 'צאת הכוכבים (חזו"א)',
   sunset: "שקיעה",
+  dusk: "צאת הכוכבים",
   tzeit72min: "צאת הכוכבים (רבינו תם)"
 };
