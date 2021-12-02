@@ -9,7 +9,6 @@ const addJoysNewsScreen = (req, res, next) => {
 
 const getJoysNews = async (req, res, next) => {
   readFileContent("joys-news", (data) => {
-    console.log(data);
     res.status(200).json(data);
   });
 };

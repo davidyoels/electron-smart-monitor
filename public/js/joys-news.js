@@ -6,7 +6,6 @@ const getJoysNews = () => {
       for (let index in data.joysNews) {
         joys_news_data += `<text>${data.joysNews[index].name}</text>`;
       }
-      console.log(joys_news_data);
       document.getElementById("joys-news-data").innerHTML = joys_news_data;
       document.getElementById("joys-news-data").innerHTML += joys_news_data;
     });

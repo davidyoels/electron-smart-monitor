@@ -13,8 +13,12 @@ const getTodayPrayTimes = () => {
       value: "9:00"
     },
     {
-      key: "ערבית",
-      value: "19:30"
+      key: "מנחה",
+      value: "12:45"
+    },
+    {
+      key: "מעריב",
+      value: "19:00"
     }
   ];
 };

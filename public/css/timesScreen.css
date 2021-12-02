@@ -507,6 +507,6 @@ h2 {
     transform: translateY(0%);
   }
   to {
-    transform: translateY(-75%);
+    transform: translateY(-50%);
   }
 }
