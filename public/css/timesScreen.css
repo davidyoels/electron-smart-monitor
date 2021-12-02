@@ -144,10 +144,8 @@ html {
 .s-m-right-times-con .s-m-right-times {
   display: flex;
   height: 95%;
-  width: 95%;
+  width: 100%;
   align-items: center;
-  font-size: 16px;
-  font-size: 2vw;
   background-image: url("../img/c1.jpg");
   background-repeat: no-repeat;
   background-size: 100% 98%;
@@ -183,13 +181,13 @@ tr {
 
 td {
   word-wrap: break-all;
-  padding: 5px;
+  padding-top: 25px;
+  padding-bottom: 25px;
 }
 
 .title-container {
   display: flex;
   flex-direction: row;
-  margin: 40px;
   align-items: center;
   justify-content: space-between;
 }
@@ -197,7 +195,7 @@ td {
 tr .title {
   display: flex;
   flex-direction: row;
-  flex-basis: 70%;
+  flex-basis: 90%;
   width: 100%;
   justify-content: center;
   align-items: center;
@@ -205,7 +203,9 @@ tr .title {
 
 .clock-icon-container {
   display: flex;
-  flex-basis: 15%;
+  height: 100%;
+  max-width: 5%;
+  flex-basis: 5%;
 }
 
 tr h3 {
@@ -216,7 +216,7 @@ tr h3 {
 h2 {
   margin: 0;
   word-wrap: break-word;
-  font-size: 3.6vmin;
+  font-size: 5vmin;
   text-shadow: 2px 2px #000000;
   color: white;
 }
@@ -305,6 +305,14 @@ h2 {
   width: 100%;
 }
 
+.s-m-middle-times-con .message-head-con-joys {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-basis: 23%;
+  width: 100%;
+}
+
 .message-title {
   display: flex;
   height: 100%;
@@ -353,6 +361,8 @@ h2 {
 .message-data-container {
   display: flex;
   flex-direction: row;
+  align-items: center;
+  justify-content: center;
   height: 80%;
   width: 90%;
 }
@@ -361,7 +371,6 @@ h2 {
   display: flex;
   flex-direction: column;
   width: 100%;
-  flex-basis: 50%;
   align-items: center;
   justify-content: center;
 }
@@ -369,8 +378,10 @@ h2 {
 .message-data-container text {
   font-family: "Assistant";
   font-weight: bold;
+  text-align: center;
+  padding: 20px;
   font-size: 16px;
-  font-size: 1.5vw;
+  font-size: 2.3vw;
   color: white;
 }
 
@@ -496,6 +507,6 @@ h2 {
     transform: translateY(0%);
   }
   to {
-    transform: translateY(-50%);
+    transform: translateY(-75%);
   }
 }
