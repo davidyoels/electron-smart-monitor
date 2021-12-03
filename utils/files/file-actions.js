@@ -23,13 +23,13 @@ const readFileContent = async (filename, cb) => {
   }
 };
 
-const writeContentToFile = async (filename, newData) => {
+const writeContentToFile = async (filename, key, newData) => {
   try {
     return fs.access(`storage/${filename}.json`, fs.F_OK, (err) => {
       if (err) {
         return fs.writeFile(
           `storage/${filename}.json`,
-          JSON.stringify({ memorizeNames: [newData] }),
+          JSON.stringify({ key: [newData] }),
           { flag: "wx", encoding: "utf-8" },
           function (err) {
             if (err) throw err;
@@ -43,7 +43,7 @@ const writeContentToFile = async (filename, newData) => {
         (err, data) => {
           if (err) throw err;
           let prevData = JSON.parse(data);
-          prevData["memorizeNames"].push(newData);
+          prevData[key].push(newData);
           return fs.writeFile(
             `storage/${filename}.json`,
             JSON.stringify(prevData),

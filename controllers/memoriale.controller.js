@@ -22,6 +22,7 @@ const addMemrizeNames = async function (req, res, next) {
     };
     const memorizeNames = await writeContentToFile(
       "memorial-names",
+      "memorizeNames",
       newMemrileName
     );
   } catch (ex) {
