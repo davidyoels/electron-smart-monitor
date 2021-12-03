@@ -1,26 +1,9 @@
-<!DOCTYPE html>
-<html dir="rtl">
-  <head>
-    <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"
-    />
-    <link
-      href="https://fonts.googleapis.com/css?family=Assistant"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="/css/timesScreen.css" />
-    <title><%= timeScreenTexts.facilityNameText %></title>
+<%- include('partials/head.ejs') %>
+  <link rel="stylesheet" href="/css/timesScreen.css" />
     <script type="module" src="/js/time-screen.js"></script>
     <script src="/js/memorize-names.js"></script>
     <script src="/js/day-time-display.js"></script>
     <script src="/js/joys-news.js"></script>
-    <script
-      src="https://cdn.socket.io/4.3.2/socket.io.min.js"
-      integrity="sha384-KAZ4DtjNhLChOB/hxXuKqhMLYvx3b5MlT55xPEiNmREKRzeEm+RVPlTnAn0ajQNs"
-      crossorigin="anonymous"
-    ></script>
     <script>
       function init() {
         initialPageSetup();
@@ -104,9 +87,6 @@
           </div>
         </div>
       </div>
-      <!-- <div class="bottom-news-container">
-        <div id="bottom-news" class="bottom-news"></div>
-      </div> -->
     </div>
   </body>
 </html>
