@@ -1,8 +1,8 @@
 module.exports = {
   chatzotNight: "חצות הלילה",
   alotHaShachar: "עלות השחר",
-  misheyakir: "סוף זמן טלית ותפילין",
-  misheyakirMachmir: "סוף זמן טלית ותפילין (מחמיר)",
+  misheyakir: "זמן טלית ותפילין",
+  misheyakirMachmir: "זמן טלית ותפילין (מחמיר)",
   sunset: "שקיעה",
   // dawn: "שחר",
   sunrise: "זריחה",

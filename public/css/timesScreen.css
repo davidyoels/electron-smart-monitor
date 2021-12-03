@@ -37,7 +37,7 @@ html {
   display: flex;
   flex-direction: column;
   height: 100%;
-  flex-basis: 33%;
+  flex-basis: 37.5%;
   align-self: center;
   align-items: center;
   justify-content: center;
@@ -119,7 +119,7 @@ tr h3 {
 h2 {
   margin: 0;
   word-wrap: break-word;
-  font-size: 5vmin;
+  font-size: 5.5vmin;
   text-shadow: 2px 2px #000000;
   color: white;
 }
@@ -137,7 +137,7 @@ h2 {
   display: flex;
   flex-direction: column;
   height: 100%;
-  flex-basis: 34%;
+  flex-basis: 25%;
   align-self: center;
   align-items: center;
   justify-content: center;
@@ -172,7 +172,7 @@ h2 {
   flex-basis: 92%;
   align-items: center;
   justify-content: flex-start;
-  width: 90%;
+  width: 100%;
 }
 
 .s-m-middle-times-con .messages-con {
