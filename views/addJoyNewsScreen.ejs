@@ -5,19 +5,20 @@
     <div class="s-m-container">
       <%- include('partials/header-page.ejs') %>
       <div class="s-m-times">
-        <form class="form" method="POST" action="/memorial/addMemorizeName">
+        <form class="form" method="POST" action="/joys-news/add-joys-names">
           <div class="title">
             <text>הוסף שמחות</text>
           </div>
           <div class="edit-name">
             <div class="add-name-container">
-              <input
-                id="child-name"
-                name="child-name"
+              <textarea
+                id="new-joys-news"
+                name="new-joys-news"
+                aria-multiline="true"
                 type="text"
                 class="form-control"
                 placeholder="כתוב כאן"
-              />
+              ></textarea>
             </div>
           </div>
           <div class="add">
