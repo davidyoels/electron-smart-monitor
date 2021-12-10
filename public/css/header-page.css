@@ -1,55 +1,6 @@
-/*------- <date time container> -------*/
-.s-m-logo {
+.s-m-top-bar {
   display: flex;
-  flex-direction: row;
-  width: 100%;
-  flex: 8;
-  justify-content: space-around;
-  align-items: center;
-}
-/*------- <date time section> -------*/
-
-.s-m-left-logo {
-  display: flex;
-  flex-basis: 33%;
-  height: 100%;
-  align-items: center;
-}
-
-.btn-back-home {
-  height: 60%;
-  visibility: visible;
-}
-
-.s-m-middle-logo {
-  display: flex;
-  height: 80%;
-  width: 100%;
-  align-items: center;
-  justify-content: center;
-  flex-basis: 33%;
-}
-
-.pray-name {
-  color: #e2a917;
-  font-size: 16px;
-  font-size: 3vw;
-}
-
-.s-m-right-logo {
-  display: flex;
-  height: 100%;
-  flex-basis: 33%;
-}
-
-/*--------------- </logo section> ---------------*/
-
-/*--------------- <date time section> ---------------*/
-
-/*------- <date time container> -------*/
-.s-m-date-time {
-  display: flex;
-  flex: 6;
+  flex: 1;
   display: flex;
   flex-direction: row;
   width: 100%;
@@ -58,9 +9,8 @@
   font-family: "Assistant";
   background: #b58d00;
 }
-/*------- <date time section> -------*/
 
-.s-m-left-datime {
+.s-m-top-bar .s-m-right-bar {
   display: flex;
   flex-basis: 33%;
   height: 100%;
@@ -73,7 +23,7 @@
   color: white;
 }
 
-.s-m-middle-datime {
+.s-m-middle-bar {
   display: flex;
   height: 80%;
   align-items: center;
@@ -86,7 +36,7 @@
   color: white;
 }
 
-.s-m-right-datime {
+.s-m-right-bar {
   display: flex;
   height: 100%;
   flex-basis: 33%;

@@ -25,91 +25,91 @@ socket.on("zmanim", (zmanim_data) => {
     containerZmanimTable;
 });
 
-socket.on("sahhabat_times", (sahhabat_times) => {
-  console.log("sahhabat_times", counter_times++);
-  let containerSahhabatTimesTable = `<th></th><th></th>`;
-  let containerholidaysTimes = ``;
-  const sahhabtTimesInHebrew = sahhabat_times["sahhabtTimesInHebrew"];
-  const todayPrayTimeDisplay = sahhabat_times["todayPrayTimeDisplay"];
-  const holidaysTimesInHeberw = sahhabat_times["holidaysTimesInHeberw"];
+// socket.on("sahhabat_times", (sahhabat_times) => {
+//   console.log("sahhabat_times", counter_times++);
+//   let containerSahhabatTimesTable = `<th></th><th></th>`;
+//   let containerholidaysTimes = ``;
+//   const sahhabtTimesInHebrew = sahhabat_times["sahhabtTimesInHebrew"];
+//   const todayPrayTimeDisplay = sahhabat_times["todayPrayTimeDisplay"];
+//   const holidaysTimesInHeberw = sahhabat_times["holidaysTimesInHeberw"];
 
-  containerSahhabatTimesTable += `<tr class="title-container">
-      <td class="clock-icon-container">
-        <img style="margin: 0" height="40" width="40" src="../../img/clock-icon.png" />
-      </td>
-      <td class="title">
-        <h2>
-        <strong>זמני תפילות חול</strong>
-        </h2>
-      </td>
-      <td class="clock-icon-container">
-        <img style="margin: 0" height="40" width="40" src="../../img/clock-icon.png" />
-      </td>
-    </tr>`;
+//   containerSahhabatTimesTable += `<tr class="title-container">
+//       <td class="clock-icon-container">
+//         <img style="margin: 0" height="40" width="40" src="../../img/clock-icon.png" />
+//       </td>
+//       <td class="title">
+//         <h2>
+//         <strong>זמני תפילות חול</strong>
+//         </h2>
+//       </td>
+//       <td class="clock-icon-container">
+//         <img style="margin: 0" height="40" width="40" src="../../img/clock-icon.png" />
+//       </td>
+//     </tr>`;
 
-  for (let i in todayPrayTimeDisplay) {
-    containerSahhabatTimesTable += `<tr>
-        <td>
-          <h2>
-            <strong>${i}:</strong>
-          </h2>
-        </td>
-        <td>
-          <h2>
-            <strong>${todayPrayTimeDisplay[i]}</strong>
-          </h2>
-        </td>
-      </tr>`;
-  }
+//   for (let i in todayPrayTimeDisplay) {
+//     containerSahhabatTimesTable += `<tr>
+//         <td>
+//           <h2>
+//             <strong>${i}:</strong>
+//           </h2>
+//         </td>
+//         <td>
+//           <h2>
+//             <strong>${todayPrayTimeDisplay[i]}</strong>
+//           </h2>
+//         </td>
+//       </tr>`;
+//   }
 
-  containerSahhabatTimesTable += `<tr class="title-container">
-    <td class="clock-icon-container">
-      <img style="margin: 0;" height="40" width="40" src="../../img/clock-icon.png" />
-    </td>
-    <td class="title">
-      <h2>
-      <strong>זמני תפילות שבת</strong>
-      </h2>
-    </td>
-    <td class="clock-icon-container">
-      <img style="margin: 0" height="40" width="40" src="../../img/clock-icon.png" />
-    </td>
-  </tr>`;
+//   containerSahhabatTimesTable += `<tr class="title-container">
+//     <td class="clock-icon-container">
+//       <img style="margin: 0;" height="40" width="40" src="../../img/clock-icon.png" />
+//     </td>
+//     <td class="title">
+//       <h2>
+//       <strong>זמני תפילות שבת</strong>
+//       </h2>
+//     </td>
+//     <td class="clock-icon-container">
+//       <img style="margin: 0" height="40" width="40" src="../../img/clock-icon.png" />
+//     </td>
+//   </tr>`;
 
-  for (let i in sahhabtTimesInHebrew) {
-    if (i == "parashat") {
-      document.getElementById("parasha").innerHTML = sahhabtTimesInHebrew[i];
-    } else if (i == "mevarchim") {
-    } else {
-      containerSahhabatTimesTable += `<tr>
-          <td>
-            <h2>
-              <strong>${i}:</strong>
-            </h2>
-          </td>
-          <td>
-            <h2>
-              <strong>${sahhabtTimesInHebrew[i]}</strong>
-            </h2>
-          </td>
-        </tr>`;
-    }
-  }
+//   for (let i in sahhabtTimesInHebrew) {
+//     if (i == "parashat") {
+//       document.getElementById("parasha").innerHTML = sahhabtTimesInHebrew[i];
+//     } else if (i == "mevarchim") {
+//     } else {
+//       containerSahhabatTimesTable += `<tr>
+//           <td>
+//             <h2>
+//               <strong>${i}:</strong>
+//             </h2>
+//           </td>
+//           <td>
+//             <h2>
+//               <strong>${sahhabtTimesInHebrew[i]}</strong>
+//             </h2>
+//           </td>
+//         </tr>`;
+//     }
+//   }
 
-  for (let i in holidaysTimesInHeberw) {
-    containerholidaysTimes += `<text>
-    ${holidaysTimesInHeberw[i]}
-    </text>
-  </tr>`;
-  }
+//   for (let i in holidaysTimesInHeberw) {
+//     containerholidaysTimes += `<text>
+//     ${holidaysTimesInHeberw[i]}
+//     </text>
+//   </tr>`;
+//   }
 
-  document.getElementById("shabbat-times-table-data").innerHTML =
-    containerSahhabatTimesTable;
-  document.getElementById("shabbat-times-table-data").innerHTML +=
-    containerSahhabatTimesTable;
-  // document.getElementById("bottom-news").innerHTML = containerholidaysTimes;
-});
+//   document.getElementById("shabbat-times-table-data").innerHTML =
+//     containerSahhabatTimesTable;
+//   document.getElementById("shabbat-times-table-data").innerHTML +=
+//     containerSahhabatTimesTable;
+//   // document.getElementById("bottom-news").innerHTML = containerholidaysTimes;
+// });
 
-socket.on("today_hebrew_date", (todayHebrewDate) => {
-  document.getElementById("today-herbew-date").innerHTML = todayHebrewDate;
-});
+// socket.on("today_hebrew_date", (todayHebrewDate) => {
+//   document.getElementById("today-herbew-date").innerHTML = todayHebrewDate;
+// });
