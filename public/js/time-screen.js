@@ -103,6 +103,40 @@ socket.on("sahhabat_times", (sahhabat_times) => {
   </tr>`;
   }
 
+  const assarBeteve = {
+    "כניסת הצום": "05:15",
+    "יציאת הצום": "16:57"
+  };
+
+  containerSahhabatTimesTable += `<tr class="title-container">
+  <td class="clock-icon-container">
+    <img style="margin: 0;" height="40" width="40" src="../../img/clock-icon.png" />
+  </td>
+  <td class="title">
+    <h2>
+    <strong>צום עשרה בטבת</strong>
+    </h2>
+  </td>
+  <td class="clock-icon-container">
+    <img style="margin: 0" height="40" width="40" src="../../img/clock-icon.png" />
+  </td>
+</tr>`;
+
+  for (let i in assarBeteve) {
+    containerSahhabatTimesTable += `<tr>
+    <td>
+      <h2>
+        <strong>${i}:</strong>
+      </h2>
+    </td>
+    <td>
+      <h2>
+        <strong>${assarBeteve[i]}</strong>
+      </h2>
+    </td>
+  </tr>`;
+  }
+
   document.getElementById("shabbat-times-table-data").innerHTML =
     containerSahhabatTimesTable;
   document.getElementById("shabbat-times-table-data").innerHTML +=
