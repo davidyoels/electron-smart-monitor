@@ -1,0 +1,51 @@
+tbody {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  align-items: center;
+  justify-content: center;
+  height: 50%;
+  width: 98%;
+}
+
+tr {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+td {
+  word-wrap: break-all;
+  padding-top: 1vw;
+  padding-bottom: 1vw;
+}
+
+.title-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+tr .title {
+  display: flex;
+  flex-direction: row;
+  flex-basis: 90%;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+tr h3 {
+  color: black;
+  margin: 0;
+}
+
+h2 {
+  margin: 0;
+  word-wrap: break-word;
+  font-size: 6.5vmin;
+  color: black;
+}

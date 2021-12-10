@@ -1,5 +1,7 @@
 <%- include('partials/head.ejs') %>
   <link rel="stylesheet" href="/css/timesScreen.css" />
+  <link rel="stylesheet" href="/css/marque.css" />
+  <link rel="stylesheet" href="/css/tables.css" />
     <script type="module" src="/js/time-screen.js"></script>
     <script src="/js/memorize-names.js"></script>
     <script src="/js/day-time-display.js"></script>
@@ -15,75 +17,42 @@
   <body onload="init()">
     <div class="s-m-container">
       <%- include('partials/header-page.ejs') %>
-      <div class="s-m-times">
-        <div class="s-m-right-times-con">
-          <text><%= timeScreenTexts.todayTimesText %></text>
-          <div class="s-m-right-times">
-            <div class="marquee">
-              <div class="track"><table id="zmanim-table-data"></table></div>
+      <div class="s-m-dashboard">
+        <div class="s-m-info-section">
+          <div class="s-m-side-column-container">
+            <div class="s-m-side-column-inner-container">
+              <div class="s-m-top-side-column"></div>
+              <div class="s-m-bottom-side-column"></div>
             </div>
           </div>
-        </div>
-        <div class="s-m-middle-times-con">
-          <div class="middle-time-title-con">
-            <text><%= timeScreenTexts.bulletinBoardText %></text>
-          </div>
-          <div class="messages-con-par">
-            <div class="messages-con">
-              <div class="messages">
-                <div class="message-head-con-joys">
-                  <div class="message-title">
-                    <text><%= timeScreenTexts.JoysText %></text>
-                  </div>
+          <div class="s-m-middle-column-container">
+            <div class="s-m-middle-column-image">
+              <div class="s-m-middle-column-data-container">
+                <div class="s-m-middle-column-title">
+                  <text class="assistant-vmin-6">זמני היום</text>
                 </div>
-                <div id="memorize-names" class="message-data">
-                  <div class="message-data-container">
+                <div class="s-m-middle-column-data">
+                  <div class="s-m-middle-column-actual-data">
                     <div class="marquee">
                       <div class="track">
-                        <div
-                          id="joys-news-data"
-                          class="message-data-content"
-                        ></div>
+                        <table id="zmanim-table-data"></table>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
-              <div class="clip-art-design-con">
-                <div class="clip-art-design"></div>
-              </div>
-              <div class="messages">
-                <div class="message-head-con">
-                  <div class="memorize-candle-left"></div>
-                  <div class="message-title">
-                    <text><%= timeScreenTexts.memorializeText %></text>
-                  </div>
-                  <div class="memorize-candle-right"></div>
-                </div>
-                <div id="memorize-names" class="message-data">
-                  <div class="message-data-container">
-                    <div class="marquee">
-                      <div class="track">
-                        <div
-                          id="memorial-names-data"
-                          class="message-data-content"
-                        ></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+            </div> 
+          </div>
+          <div class="s-m-side-column-container">
+            <div class="s-m-side-column-inner-container">
+              <div class="s-m-top-side-column"></div>
+              <div class="s-m-bottom-side-column"></div>
             </div>
           </div>
         </div>
-        <div class="s-m-right-times-con">
-          <text><%= timeScreenTexts.prayTimesText %></text>
-          <div class="s-m-right-times">
-            <div class="marquee">
-              <div class="track">
-                <table id="shabbat-times-table-data"></table>
-              </div>
-            </div>
+        <div class="s-m-bottom-bar-container">
+          <div class="s-m-bottom-bar">
+            <text class="assistant-s-2-5">נתרם לעילוי נשמת הרב בן דב אינדיג</text>
           </div>
         </div>
       </div>
