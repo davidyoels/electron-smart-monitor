@@ -25,7 +25,7 @@ html {
 
 .s-m-dashboard {
   display: flex;
-  flex: 12;
+  flex: 15;
   flex-direction: column;
   width: 100%;
 }
@@ -64,6 +64,51 @@ html {
   background-image: url("../img/top-side-section.png");
   background-repeat: no-repeat;
   background-size: 100% 100%;
+}
+
+.s-m-info-section .s-m-top-side-column-image {
+  display: flex;
+  flex: 2;
+  flex-direction: column;
+  width: 100%;
+  margin-bottom: 0.6vw;
+  align-items: center;
+  justify-content: center;
+  background-image: url("../img/top-side-section.png");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+.s-m-info-section .s-m-top-side-column-title {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: flex-end;
+  width: 100%;
+}
+
+.s-m-info-section .s-m-top-side-column-data {
+  display: flex;
+  flex: 7;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.s-m-info-section .s-m-top-column-actual-data {
+  display: flex;
+  flex: 1;
+  height: 85%;
+  width: 100%;
+}
+
+.s-m-top-side-column-data #memorial-names-data,
+#joys-news-data {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  text-align: center;
+  height: 90%;
 }
 
 .s-m-info-section .s-m-bottom-side-column {
