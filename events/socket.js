@@ -55,10 +55,15 @@ const initalFetchData = (io) => {
   scheduleTodayHebrewDate(io);
 };
 
+const scheduleSwapText = (io) => {
+  io.emit("schedule_swap_text");
+};
+
 const createSocketIO = (appServer) => {
   const io = socketIO(appServer);
   io.on("connection", (socket) => {
     console.log("a user connected");
+    scheduleSwapText(io);
     initalFetchData(io);
   });
 };
