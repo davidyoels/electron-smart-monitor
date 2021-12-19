@@ -6,21 +6,28 @@ let containerZmanimTable = `<th></th><th></th>`;
 let containerSahhabatTimesTable = `<th></th><th></th>`;
 let containerholidaysTimes = ``;
 let zmanimElement;
+let temp;
 
 socket.on("schedule_swap_text", () => {
-  let isShowingZmanim = true;
-  let zmanimElement = document.getElementById("zmanim-table-data");
-  let middleTitleElement = document.getElementById("s-m-middle-title");
+  let isShowingZmanim = false;
+  let zmanimElement = $("#zmanim-table-data");
+  let middleTitleElement = $("#s-m-middle-title");
 
-  const thirtySeconds = 30 * 1000;
-  const twoSeconds = 30 * 1000;
+  let zmanimElement1 = document.getElementById("zmanim-table-data");
+  let middleTitleElement1 = document.getElementById("s-m-middle-title");
+
+  const fadeTime = 2000;
+  const thirtySeconds = 10 * 1000;
+  const twoSeconds = 2 * 1000;
   const dayTimesText = "זמני היום";
   const shabbatTimesText = "זמני שבת";
 
   setTimeout(() => {
     if (zmanimElement && middleTitleElement) {
-      zmanimElement.innerHTML = containerZmanimTable;
-      zmanimElement.innerHTML += containerZmanimTable;
+      temp = containerZmanimTable;
+      temp += containerZmanimTable;
+      console.log("data");
+      zmanimElement1.innerHTML = temp;
       middleTitleElement.innerText = dayTimesText;
     }
   }, twoSeconds);
@@ -28,13 +35,27 @@ socket.on("schedule_swap_text", () => {
   setInterval(() => {
     if (zmanimElement) {
       if (isShowingZmanim) {
-        zmanimElement.innerHTML = containerZmanimTable;
-        zmanimElement.innerHTML += containerZmanimTable;
-        middleTitleElement.innerText = dayTimesText;
+        temp = containerZmanimTable;
+        temp += containerZmanimTable;
+        zmanimElement.fadeOut(fadeTime, function () {
+          zmanimElement1.innerHTML = temp;
+          zmanimElement.fadeIn(fadeTime);
+        });
+        middleTitleElement.fadeOut(fadeTime, function () {
+          middleTitleElement1.innerText = dayTimesText;
+          middleTitleElement.fadeIn(fadeTime);
+        });
       } else {
-        zmanimElement.innerHTML = containerSahhabatTimesTable;
-        zmanimElement.innerHTML += containerSahhabatTimesTable;
-        middleTitleElement.innerText = shabbatTimesText;
+        temp = containerSahhabatTimesTable;
+        temp += containerSahhabatTimesTable;
+        zmanimElement.fadeOut(fadeTime, function () {
+          zmanimElement1.innerHTML = temp;
+          zmanimElement.fadeIn(fadeTime);
+        });
+        middleTitleElement.fadeOut(fadeTime, function () {
+          middleTitleElement1.innerText = shabbatTimesText;
+          middleTitleElement.fadeIn(fadeTime);
+        });
       }
     }
     isShowingZmanim = !isShowingZmanim;
@@ -43,6 +64,7 @@ socket.on("schedule_swap_text", () => {
 
 socket.on("zmanim", (zmanim_data) => {
   console.log("zmanim", counter++);
+  containerZmanimTable = "";
   for (let i in zmanim_data) {
     containerZmanimTable += `<tr>
         <td>
@@ -57,14 +79,11 @@ socket.on("zmanim", (zmanim_data) => {
         </td>
       </tr>`;
   }
-  // document.getElementById("zmanim-table-data").innerHTML = containerZmanimTable;
-  // document.getElementById("zmanim-table-data").innerHTML +=
-  //   containerZmanimTable;
 });
 
 socket.on("sahhabat_times", (sahhabat_times) => {
   console.log("sahhabat_times", counter_times++);
-
+  containerSahhabatTimesTable = "";
   const sahhabtTimesInHebrew = sahhabat_times["sahhabtTimesInHebrew"];
   const todayPrayTimeDisplay = sahhabat_times["todayPrayTimeDisplay"];
   const holidaysTimesInHeberw = sahhabat_times["holidaysTimesInHeberw"];

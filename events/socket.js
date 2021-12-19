@@ -5,7 +5,7 @@ const { fetchZmanimData } = require("../data/zmanim.data");
 const { fetchShabatData } = require("../data/shabat-times.data");
 const { fetchTodayHebrewDate } = require("../data/today-hebrew-times.data");
 
-const scheduleDaily = "01 00 00 * * *";
+const scheduleDaily = "* * * * *";
 const scheduleWeekly = "01 00 00 * * 7";
 
 const scheduleJob = (name, expression, callback) => {
