@@ -4,7 +4,7 @@ const shabbatEveningTimes = [
     time: "מיד לאחר מנחה"
   },
   {
-    text: "שיעור מפי הרב",
+    text: "שיעור מפי מורנו הרב גד קדוש",
     time: "בזמן"
   },
   {

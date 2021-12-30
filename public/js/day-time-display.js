@@ -14,8 +14,8 @@ function display_ct() {
     ("0" + m).substr(-2) +
     ":" +
     ("0" + s).substr(-2);
-  document.getElementById("time").innerHTML = textContent;
-  display_c();
+  // document.getElementById("time").innerHTML = textContent;
+  // display_c();
 }
 
 function initialPageSetup() {

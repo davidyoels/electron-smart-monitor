@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      body {
+        font-family: "Times New Roman", sans-serif;
+        background: green;
+        color: black;
+        text-align: center;
+      }
+
+      h2 {
+        font-weight: bold;
+        padding: 0 10px;
+        margin-bottom: 10px;
+      }
+
+      .parentClass {
+        background: cyan;
+        width: 80vw;
+        margin: 8vw 10vw;
+        height: 210px;
+      }
+
+      .firstchild {
+        top: 0;
+        left: 0;
+      }
+
+      .secondchild {
+        top: 0;
+        right: 0;
+      }
+
+      .childClass {
+        position: absolute;
+        opacity: 0.6;
+        height: 150px;
+        background: yellow;
+        width: 200px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="parentClass">
+      <h2>I am Parent</h2>
+      <div class="childClass firstchild">
+        <h2>First Child</h2>
+      </div>
+
+      <div class="childClass secondchild">
+        <h2>Second Child</h2>
+      </div>
+    </div>
+  </body>
+</html>

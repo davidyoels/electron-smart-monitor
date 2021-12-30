@@ -6,7 +6,7 @@ const shabbatEveningTimes = [
     text: "קבלת שבת"
   },
   {
-    text: "שיעור מפי הרב גד קדוש"
+    text: "שיעור מפי מורנו הרב גד קדוש"
   },
   {
     text: "ערבית"

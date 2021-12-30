@@ -2,16 +2,23 @@
 <%- include('partials/head.ejs') %>
 <link rel="stylesheet" href="/css/timesScreen.css" />
 <link rel="stylesheet" href="/css/marque.css" />
+<link rel="stylesheet" href="/css/marquee-horizontal.css" />
 <link rel="stylesheet" href="/css/tables.css" />
   <script type="module" src="/js/time-screen.js"></script>
   <script src="/js/memorize-names.js"></script>
   <script src="/js/day-time-display.js"></script>
   <script src="/js/joys-news.js"></script>
+  <script src="/js/announcments.js"></script>
+  <script src="/js/lessons.js"></script>
+  <script src="modernizr-2.6.2-respond-1.1.0.min.js"></script>
+  <script src="../vendor/circletype/dist/circletype.min.js"></script>
   <script>
     function init() {
       initialPageSetup();
       getMemorizeNames();
       getJoysNews();
+      getAnnouncments();
+      getLessons();
     }
   </script>
 </head>
@@ -25,13 +32,13 @@
             <div class="s-m-top-side-column">
               <div class="s-m-top-side-column-image">
                 <div class="s-m-top-side-column-title">
-                  <text class="regular-s-2">לעילוי נשמת</text>
+                  <text class="regular-s-2">שיעורים</text>
                 </div>
                 <div class="s-m-top-side-column-data">
                   <div class="s-m-top-column-actual-data">
                     <div class="marquee">
                       <div class="track">
-                        <div id="memorial-names-data"></div>
+                        <div id="lessons"></div>
                       </div>
                     </div>
                   </div>
@@ -42,48 +49,75 @@
           </div>
         </div>
         <div class="s-m-middle-column-container">
-          <div class="s-m-middle-column-image">
-            <div class="s-m-middle-column-data-container">
-              <div class="s-m-middle-column-title">
-                <text id="s-m-middle-title" class="regular-s-4">זמני היום</text>
-              </div>
-              <div class="s-m-middle-column-data">
-                <div class="s-m-middle-column-actual-data">
-                  <div class="marquee">
-                    <div class="track">
-                      <table id="zmanim-table-data"></table>
-                    </div>
-                  </div>
+          <div class="s-m-bottom-column-inner-container">
+            <div class="s-m-middle-top-column">
+              <div class="s-m-middle-top-image">
+                <div class="s-m-middle-column-title">
+                  <text id="s-m-middle-title" class="regular-s-4">זמני היום</text>
                 </div>
-              </div>
-            </div>
-          </div> 
-        </div>
-        <div class="s-m-side-column-container">
-          <div class="s-m-side-column-inner-container">
-            <div class="s-m-top-side-column">
-              <div class="s-m-top-side-column-image">
-                <div class="s-m-top-side-column-title">
-                  <text class="regular-s-2">מזל טוב</text>
-                </div>
-                <div class="s-m-top-side-column-data">
-                  <div class="s-m-top-column-actual-data">
+                <div class="s-m-middle-column-data">
+                  <div class="s-m-middle-column-actual-data">
                     <div class="marquee">
                       <div class="track">
-                        <div id="joys-news-data"></div>
+                        <table id="zmanim-table-data"></table>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-            <div class="s-m-bottom-side-column"></div>
+            <div class="s-m-middle-bottom-column">
+              <div class="s-m-middle-bottom-image">
+                <div class="clock-container">
+                  <div class="clock">
+                    <%- include('partials/components/clock.ejs') %>
+                  </div>
+                </div>   
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="s-m-side-column-container">
+          <div class="s-m-side-column-inner-container">
+            <div class="s-m-top-side-column">
+              <div class="s-m-top-side-column-image">
+                <div class="s-m-top-side-column-title">
+                  <text class="regular-s-2">הודעות</text>
+                </div>
+                <div class="s-m-top-side-column-data">
+                  <div class="s-m-top-column-actual-data">
+                    <div class="marquee">
+                      <div class="track">
+                        <div id="announcments"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="s-m-bottom-side-column">
+                <text style="align-self: center;" class="regular-s-2">מזל טוב</text>
+              <div class="marquee">
+                <div class="track">
+                  <div id="joys-news-data"></div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
+   
       <div class="s-m-bottom-bar-container">
         <div class="s-m-bottom-bar">
-          <text class="assistant-s-2-5">נתרם לעילוי נשמת הרב בן דב אינדיג</text>
+          <div class="s-m-bottom-text">
+            <text class="memorial-names  assistant-s-2-5">אימי מורתי שבע בת יוסף</text>
+          </div>
+          <div class="s-m-bottom-text">
+            <text class="memorial-names  assistant-s-3">נתרם לעילוי נשמת</text>
+          </div>
+          <div class="s-m-bottom-text">
+            <text class="memorial-names  assistant-s-2-5">אבי מורי הרב ישראל בן דב אינדיג</text>
+          </div>
         </div>
       </div>
     </div>
