@@ -1,7 +1,7 @@
 const getTodayPrayTimes = () => {
   return [
     {
-      key: 'שיעור דף היומי ע"י הרב קדוש',
+      key: 'שיעור דף היומי ע"י מורנו הרב קדוש',
       value: "7:00"
     },
     {
