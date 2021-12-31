@@ -1,44 +1,55 @@
-<!DOCTYPE html>
-<html dir="rtl" lang="he">
-  <head>
-    <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"
-    />
-    <link rel="stylesheet" href="/css/index.css" />
-    <!-- <script src="http://localhost:3000/socket.io/socket.io.js"></script> -->
-    <script
-      src="https://cdn.socket.io/4.3.2/socket.io.min.js"
-      integrity="sha384-KAZ4DtjNhLChOB/hxXuKqhMLYvx3b5MlT55xPEiNmREKRzeEm+RVPlTnAn0ajQNs"
-      crossorigin="anonymous"
-    ></script>
-
-    <title>Smart Monitor</title>
-  </head>
-  <body onload="onload">
+<%- include('partials/head.ejs') %>
+<script type="text/javascript" src="jquery/jquery.min.js"></script>
+<script
+  type="text/javascript"
+  src="jquery/jquery.lettering.min.js"
+></script>
+  <link rel="stylesheet" href="/css/index.css" />
+  <script src="circletype/dist/circletype.min.js"></script>
+</head>
+  <body onload="makeTextCircle()">
     <div class="i-container">
-      <div class="i-top">
-        <h2>מערכת צג חכם בית כנסת שירת ישראל</h2>
+      <div class="s-m-header">
+        <%- include('partials/header-page.ejs') %>
+        <!-- <h2 class="assistant-s-2-5" style="color:#b58d00" id="facility-title">
+          <%= timeScreenTexts.facilityNameText %>
+        </h2>
+          <h2 class="assistant-s-2-5" style="color:#b58d00" id="team-title">
+            <%= timeScreenTexts.facilityNameText %>
+          </h2>
+        <h2 class="assistant-s-2-5" style="color:#b58d00" id="another-title">
+          <%= timeScreenTexts.facilityNameText %>
+        </h2> -->
       </div>
-      <div class="i-bottom">
-        <div class="i-item-center">
-          <button
-            id="zmanim"
-            onclick="window.location.href='/zmanim/timesScreen'"
-          >
-            הצג מסך זמנים
+      <div class="s-m-row s-m-space">
+        <div class="clip-art-container">
+          <button class="clip-art-image"  onclick="window.location.href='/zmanim/timesScreen'">
+            <h3 class="assistant-s-2-5">
+              <%= timeScreenTexts.showTimeScreenText %>
+            </h3>
           </button>
-          <button
-            onclick="window.location.href='/shabbat-times/changeShabbatTimesScreen'"
-          >
-            הוסף זמני שבת
+        </div>
+        <div class="clip-art-container" >
+          <button class="clip-art-image" onclick="window.location.href='/shabbat-times/changeShabbatTimesScreen'">
+            <h3 class="assistant-s-2-5">
+              <%= timeScreenTexts.addMessageScreenText %>
+            </h3>
           </button>
-          <button onclick="window.location.href='/memorial/addMemorialScreen'">
-            הוסף שמות לעילוי נשמת
+        </div>
+      </div>
+      <div class="s-m-row s-m-center">
+        <div class="clip-art-container">
+          <button class="clip-art-image" onclick="window.location.href='/joys-news/addJoyNewsScreen'">
+            <h3 class="assistant-s-2-5">
+              <%= timeScreenTexts.addJoysScreenText %>
+            </h3>
           </button>
-          <button onclick="window.location.href='/joys-news/addJoyNewsScreen'">
-            הוסף שמחות
+        </div>
+        <div class="clip-art-container">
+          <button class="clip-art-image"  onclick="window.location.href='/memorial/addMemorialScreen'">
+            <h3 class="assistant-s-2-5">
+              <%= timeScreenTexts.addMemorialScreenText %>
+            </h3>
           </button>
         </div>
       </div>

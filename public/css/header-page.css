@@ -1,9 +1,9 @@
 .s-m-top-bar {
   display: flex;
   flex: 1;
-  display: flex;
   flex-direction: row;
   width: 100%;
+  height: 100%;
   justify-content: space-around;
   align-items: center;
   font-family: "Assistant";
@@ -12,15 +12,15 @@
 
 .s-m-top-bar .s-m-right-bar {
   display: flex;
+  flex-direction: column;
   flex-basis: 33%;
-  height: 100%;
+  height: 50%;
   font-weight: bold;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
   font-size: 16px;
   font-size: 2vw;
   font-family: "Assistant";
-  color: white;
 }
 
 .s-m-middle-bar {

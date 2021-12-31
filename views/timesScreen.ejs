@@ -10,8 +10,11 @@
   <script src="/js/joys-news.js"></script>
   <script src="/js/announcments.js"></script>
   <script src="/js/lessons.js"></script>
-  <script src="modernizr-2.6.2-respond-1.1.0.min.js"></script>
-  <script src="../vendor/circletype/dist/circletype.min.js"></script>
+  <script
+    type="text/javascript"
+    src="/jquery/jquery.lettering.min.js"
+  ></script>
+  <script src="/circletype/dist/circletype.min.js"></script>
   <script>
     function init() {
       initialPageSetup();
@@ -19,12 +22,15 @@
       getJoysNews();
       getAnnouncments();
       getLessons();
+      makeTextCircle();
     }
   </script>
 </head>
 <body onload="init()">
   <div class="s-m-container">
-    <%- include('partials/header-page.ejs') %>
+    <div class="header-page-bar">
+      <%- include('partials/header-page.ejs') %>
+    </div>
     <div class="s-m-dashboard">
       <div class="s-m-info-section">
         <div class="s-m-side-column-container">
@@ -110,13 +116,13 @@
       <div class="s-m-bottom-bar-container">
         <div class="s-m-bottom-bar">
           <div class="s-m-bottom-text">
-            <text class="memorial-names  assistant-s-2-5">אימי מורתי שבע בת יוסף</text>
+            <text class="memorial-names  assistant-s-2">אימי מורתי שבע בת יוסף</text>
           </div>
           <div class="s-m-bottom-text">
-            <text class="memorial-names  assistant-s-3">נתרם לעילוי נשמת</text>
+            <text class="memorial-names  assistant-s-2-5">נתרם לעילוי נשמת</text>
           </div>
           <div class="s-m-bottom-text">
-            <text class="memorial-names  assistant-s-2-5">אבי מורי הרב ישראל בן דב אינדיג</text>
+            <text class="memorial-names  assistant-s-2">אבי מורי הרב ישראל בן דב אינדיג</text>
           </div>
         </div>
       </div>
