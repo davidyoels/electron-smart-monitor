@@ -23,9 +23,16 @@ html {
   width: 100%;
 }
 
+.header-page-bar {
+  display: flex;
+  flex: 2;
+  flex-direction: row;
+  width: 100%;
+}
+
 .s-m-dashboard {
   display: flex;
-  flex: 15;
+  flex: 20;
   flex-direction: column;
   width: 100%;
 }
@@ -61,9 +68,6 @@ html {
   flex: 2;
   width: 100%;
   margin-bottom: 0.6vw;
-  background-image: url("../img/top-side-section.png");
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
 }
 
 .s-m-info-section .s-m-top-side-column-image {
@@ -148,9 +152,6 @@ html {
   flex: 2;
   width: 100%;
   margin-bottom: 0.6vw;
-  background-image: url("../img/top-side-section.png");
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
 }
 
 .s-m-middle-column-container .s-m-middle-top-image {
@@ -241,7 +242,7 @@ html {
 .s-m-bottom-bar-container {
   display: flex;
   flex-direction: row;
-  flex: 1;
+  flex: 0.8;
   height: 100%;
   width: 100%;
   background-color: #b58d00;

@@ -7,9 +7,21 @@ const memorialRoute = require("./memoriale.route");
 const zmanimTimesRoute = require("./zmanim-times.route");
 const announcmentsRoute = require("./announcments.route");
 const lessonsRoute = require("./lessons.route");
+const heIL = require("../utils/i18n/he-IL");
 
 router.get("/", function (req, res, next) {
-  res.render("index", { title: "Express" });
+  res.render("index", {
+    timeScreenTexts: {
+      facilityNameText: heIL.facilityNameText.split("").reverse().join(""),
+      showTimeScreenText: heIL.showTimeScreenText,
+      addMessageScreenText: heIL.addMessageScreenText,
+      addMemorialScreenText: heIL.addMemorialScreenText,
+      addJoysScreenText: heIL.addJoysScreenText,
+      middleBottomTitle: heIL.middleBottomTitle.split("").reverse().join(""),
+      kolelName: heIL.kolelName.split("").reverse().join(""),
+      kolelLeaderName: heIL.kolelLeaderName.split("").reverse().join("")
+    }
+  });
 });
 
 router.use("/shabbat-times", shabbatTimesRoute);

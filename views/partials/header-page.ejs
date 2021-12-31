@@ -1,9 +1,33 @@
+<script>
+  function makeTextCircle() {
+    new CircleType(document.getElementById("facility-title")).radius(550);
+    new CircleType(document.getElementById("team-title")).dir(-1).radius(550);
+    new CircleType(document.getElementById("kolel-title")).radius(550);
+    new CircleType(document.getElementById("bottom-kolel-title"))
+      .dir(-1)
+      .radius(550);
+  }
+</script>
 <div class="s-m-top-bar">
-  <div class="s-m-right-bar" id="today-herbew-date"></div>
-  <div class="s-m-middle-bar">
-    <div id="time"></div>
+  <div class="s-m-right-bar">
+    <h2 class="assistant-s-1-5" style="color: black" id="kolel-title">
+      <%= timeScreenTexts.kolelName %>
+    </h2>
+    <h2 class="assistant-s-1-5" style="color: black" id="bottom-kolel-title">
+      <%= timeScreenTexts.kolelLeaderName %>
+    </h2>
   </div>
   <div class="s-m-right-bar">
-    <div id="parasha"></div>
+    <h2 class="assistant-s-1-5" style="color: black" id="facility-title">
+      <%= timeScreenTexts.facilityNameText %>
+    </h2>
+    <h2 class="assistant-s-1-5" style="color: black" id="team-title">
+      <%= timeScreenTexts.middleBottomTitle %>
+    </h2>
+  </div>
+  <div class="s-m-right-bar">
+    <div id="parasha" class="assistant-s-2-5"></div>
   </div>
 </div>
+
+<!--  id="today-herbew-date" -->
