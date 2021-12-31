@@ -132,7 +132,6 @@ socket.on("sahhabat_times", (sahhabat_times) => {
   </tr>`;
 
   for (let i in sahhabtTimesInHebrew) {
-    console.log(sahhabtTimesInHebrew[i]);
     if (i == "parashat") {
       document.getElementById("parasha").innerHTML = sahhabtTimesInHebrew[i];
     } else if (i == "mevarchim") {
