@@ -17,7 +17,7 @@ socket.on("schedule_swap_text", () => {
   let middleTitleElement1 = document.getElementById("s-m-middle-title");
 
   const fadeTime = 2000;
-  const thirtySeconds = 10 * 1000;
+  const thirtySeconds = 30 * 1000;
   const twoSeconds = 2 * 1000;
   const dayTimesText = "זמני היום";
   const shabbatTimesText = "זמני שבת";
@@ -132,9 +132,13 @@ socket.on("sahhabat_times", (sahhabat_times) => {
   </tr>`;
 
   for (let i in sahhabtTimesInHebrew) {
+    console.log(sahhabtTimesInHebrew[i]);
     if (i == "parashat") {
       document.getElementById("parasha").innerHTML = sahhabtTimesInHebrew[i];
     } else if (i == "mevarchim") {
+      var paraha = document.getElementById("parasha").innerHTML;
+      document.getElementById("parasha").innerHTML =
+        paraha + sahhabtTimesInHebrew[i];
     } else {
       containerSahhabatTimesTable += `<tr>
           <td>
