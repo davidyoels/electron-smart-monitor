@@ -28,6 +28,8 @@ const fetchShabatData = async () => {
           sahhabtTimesInHebrew[dataItemCategory] = shabbatTimeValue;
         } else if (dataItemCategory == "holiday") {
           // holidaysTimesInHeberw[dataItem["title"]] = dataItem["hebrew"];
+        } else if (dataItemCategory == "mevarchim") {
+          sahhabtTimesInHebrew[dataItemCategory] = dataItem["hebrew"];
         } else {
           shabbatTimeValue = String(dataItem["title"]);
           shabbatTimeValue = shabbatTimeValue.substring(
@@ -56,7 +58,6 @@ const fetchShabatData = async () => {
       for (let todayPrayTime of todayPrayTimes) {
         todayPrayTimeDisplay[todayPrayTime["key"]] = todayPrayTime["value"];
       }
-
       return {
         sahhabtTimesInHebrew: sahhabtTimesInHebrew,
         todayPrayTimeDisplay: todayPrayTimeDisplay,
