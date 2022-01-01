@@ -87,7 +87,7 @@ socket.on("sahhabat_times", (sahhabat_times) => {
   const sahhabtTimesInHebrew = sahhabat_times["sahhabtTimesInHebrew"];
   const todayPrayTimeDisplay = sahhabat_times["todayPrayTimeDisplay"];
   const holidaysTimesInHeberw = sahhabat_times["holidaysTimesInHeberw"];
-
+  console.log(sahhabtTimesInHebrew);
   containerSahhabatTimesTable += `<tr class="title-container">
       <td class="clock-icon-container">
         <img style="margin: 0" height="40" width="40" src="../../img/clock-icon.png" />

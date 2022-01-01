@@ -1,11 +1,35 @@
 <script>
+  var facilityTitleCirclText;
+  var teamTitleCirclText;
+  var KolelTitleTitleCirclText;
+  var bottomKolelTitleCirclText;
   function makeTextCircle() {
-    new CircleType(document.getElementById("facility-title")).radius(550);
-    new CircleType(document.getElementById("team-title")).dir(-1).radius(550);
-    new CircleType(document.getElementById("kolel-title")).radius(550);
-    new CircleType(document.getElementById("bottom-kolel-title"))
+    facilityTitleCirclText = new CircleType(
+      document.getElementById("facility-title")
+    ).radius(550);
+
+    teamTitleCirclText = new CircleType(document.getElementById("team-title"))
       .dir(-1)
       .radius(550);
+
+    KolelTitleTitleCirclText = new CircleType(
+      document.getElementById("kolel-title")
+    ).radius(550);
+
+    bottomKolelTitleCirclText = new CircleType(
+      document.getElementById("bottom-kolel-title")
+    )
+      .dir(-1)
+      .radius(550);
+  }
+
+  function refreshTextCircle() {
+    // console.log(facilityTitleCirclText);
+    facilityTitleCirclText.refresh();
+    teamTitleCirclText.refresh();
+    KolelTitleTitleCirclText.refresh();
+    bottomKolelTitleCirclText.refresh();
+    // console.log("refresh", new Date().getTime());
   }
 </script>
 <div class="s-m-top-bar">
@@ -18,6 +42,9 @@
     </h2>
   </div>
   <div class="s-m-right-bar">
+    <text id="parasha" class="assistant-s-2-5"></text>
+  </div>
+  <div class="s-m-right-bar">
     <h2 class="assistant-s-1-5" style="color: black" id="facility-title">
       <%= timeScreenTexts.facilityNameText %>
     </h2>
@@ -26,7 +53,15 @@
     </h2>
   </div>
   <div class="s-m-right-bar">
-    <div id="parasha" class="assistant-s-2-5"></div>
+    <text id="today-herbew-date" class="assistant-s-2-5"></text>
+  </div>
+  <div class="s-m-right-bar">
+    <!-- <h2 class="assistant-s-1-5" style="color: black" id="facility-title">
+      <%= timeScreenTexts.facilityNameText %>
+    </h2>
+    <h2 class="assistant-s-1-5" style="color: black" id="team-title">
+      <%= timeScreenTexts.middleBottomTitle %>
+    </h2> -->
   </div>
 </div>
 
