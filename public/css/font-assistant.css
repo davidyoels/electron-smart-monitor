@@ -1,6 +1,6 @@
 .assistant-s-1 {
   font-family: "Assistant";
-  font-weight: bolder;
+  font-weight: 900;
   font-size: 16px; /* for fallback instead of 2vw*/
   font-size: 1vw;
   color: black;
@@ -8,7 +8,7 @@
 
 .assistant-s-1-5 {
   font-family: "Assistant";
-  font-weight: bolder;
+  font-weight: 900;
   font-size: 16px; /* for fallback instead of 2vw*/
   font-size: 1.5vw;
   color: black;
@@ -16,7 +16,7 @@
 
 .assistant-s-2 {
   font-family: "Assistant";
-  font-weight: bolder;
+  font-weight: 900;
   font-size: 16px; /* for fallback instead of 2vw*/
   font-size: 2vw;
   color: black;
@@ -24,7 +24,7 @@
 
 .assistant-s-2-5 {
   font-family: "Assistant";
-  font-weight: bolder;
+  font-weight: 900;
   font-size: 16px; /* for fallback instead of 2vw*/
   font-size: 2.5vw;
   color: black;
@@ -32,7 +32,7 @@
 
 .assistant-s-3 {
   font-family: "Assistant";
-  font-weight: bolder;
+  font-weight: 900;
   font-size: 16px; /* for fallback instead of 2vw*/
   font-size: 3vw;
   color: black;
@@ -40,28 +40,35 @@
 
 .assistant-s-6 {
   font-family: "Assistant";
-  font-weight: bolder;
+  font-weight: 900;
   font-size: 16px; /* for fallback instead of 2vw*/
   font-size: 6vw;
   color: black;
 }
 
 .regular-s-2 {
-  font-weight: bolder;
+  font-weight: 900;
   font-size: 16px; /* for fallback instead of 2vw*/
   font-size: 2vw;
   color: black;
 }
 
+.regular-s-2-5 {
+  font-weight: 900;
+  font-size: 16px; /* for fallback instead of 2vw*/
+  font-size: 2.5vw;
+  color: black;
+}
+
 .regular-s-4 {
-  font-weight: bolder;
+  font-weight: 900;
   font-size: 16px; /* for fallback instead of 2vw*/
   font-size: 4vw;
   color: black;
 }
 
 .bolder {
-  font-weight: bolder;
+  font-weight: 900;
 }
 
 .assistant-vmin-4 {
