@@ -20,7 +20,7 @@ app.use(express.static(path.join(__dirname, "vendor")));
 // Add headers before the routes are defined
 app.use(function (req, res, next) {
   // Website you wish to allow to connect
-  res.setHeader("Access-Control-Allow-Origin", "http://localhost:3000");
+  res.setHeader("Access-Control-Allow-Origin", "http://localhost:5000");
 
   // Request methods you wish to allow
   res.setHeader(
@@ -74,7 +74,7 @@ app.use(function (err, req, res, next) {
   });
 });
 
-var appServer = app.listen(3000);
+var appServer = app.listen(5000);
 
 createSocketIO(appServer);
 

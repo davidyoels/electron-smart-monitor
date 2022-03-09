@@ -25,6 +25,7 @@
   },
   "homepage": "https://github.com/davidyoels/smart-monitor#readme",
   "dependencies": {
+    "body-parser": "^1.19.2",
     "bootstrap": "4.2.1",
     "circletype": "^2.3.0",
     "docxtemplater": "^3.16.3",
