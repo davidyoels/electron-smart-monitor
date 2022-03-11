@@ -2,7 +2,10 @@ const shabbatTimesKeys = {
   candles: "הדלקת נרות שבת",
   havdalah: "צאת שבת",
   parashat: "פרשת",
-  holiday: ""
+  holiday: "",
+  category: {
+    subcat: "shabbat"
+  }
 };
 
 module.exports = {

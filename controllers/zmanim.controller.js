@@ -1,5 +1,6 @@
 const timeScreenTexts = require("../utils/i18n/he-IL");
 const { fetchZmanimData } = require("../data/zmanim.data");
+const { getTodayPrayTimes } = require("../data/pray-day-times.data");
 
 const dayTimesScreen = (req, res, next) => {
   fetchZmanimData().then((zmanim_data) => {
@@ -18,7 +19,8 @@ const dayTimesScreen = (req, res, next) => {
           .split("")
           .reverse()
           .join("")
-      }
+      },
+      todayPrayTimes: getTodayPrayTimes()
     });
   });
 };
