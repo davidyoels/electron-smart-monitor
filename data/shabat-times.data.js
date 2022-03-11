@@ -2,12 +2,13 @@ const { geo_location } = require("../utils/consts/geolocation");
 const fetch = require("electron-fetch").default;
 const { baseApiUrl } = require("../utils/consts/baseApiUrl");
 const { shabbatTimesKeys } = require("../utils/keys/shabat-times-keys");
+const { HEBCAL_KEYS } = require("../utils/keys/hebcal_keys");
 
 const {
   shabbatDayTimes,
   shabbatEveningTimes
 } = require("../utils/keys/static-shabbat-keys");
-const { getTodayPrayTimes } = require("./pray-day-times.data.");
+const { getTodayPrayTimes } = require("./pray-day-times.data");
 
 const fetchShabatData = async () => {
   return fetch(`${baseApiUrl}/shabbat?cfg=json&geonameid=${geo_location}&&M=on`)
@@ -19,48 +20,51 @@ const fetchShabatData = async () => {
       let dataItemCategory;
       let shabbatTimeKey;
       let shabbatTimeValue;
+
       for (let dataItem of dataItems) {
-        dataItemCategory = dataItem["category"];
+        dataItemCategory = dataItem[HEBCAL_KEYS.CATEGORY];
         shabbatTimeKey = shabbatTimesKeys[dataItemCategory];
         if (!Object.keys(shabbatTimesKeys).includes(dataItemCategory)) continue;
-        if (dataItemCategory == "parashat") {
-          shabbatTimeValue = String(dataItem["hebrew"]);
-          sahhabtTimesInHebrew[dataItemCategory] = shabbatTimeValue;
-        } else if (dataItemCategory == "holiday") {
-          // holidaysTimesInHeberw[dataItem["title"]] = dataItem["hebrew"];
-        } else if (dataItemCategory == "mevarchim") {
-          sahhabtTimesInHebrew[dataItemCategory] = dataItem["hebrew"];
-        } else {
-          shabbatTimeValue = String(dataItem["title"]);
-          shabbatTimeValue = shabbatTimeValue.substring(
-            shabbatTimeValue.indexOf(":") + 2
-          );
-
-          if (dataItemCategory == "havdalah") {
-            for (let shabbatDayTime of shabbatDayTimes) {
-              sahhabtTimesInHebrew[shabbatDayTime["text"]] =
-                shabbatDayTime["time"];
+        switch (dataItemCategory) {
+          case HEBCAL_KEYS.PARASHAT:
+            shabbatTimeValue = String(dataItem[HEBCAL_KEYS.HEBREW]);
+            sahhabtTimesInHebrew[dataItemCategory] = shabbatTimeValue;
+            break;
+          case HEBCAL_KEYS.HOLIDAY:
+            const dataItemSubCategory = dataItem[HEBCAL_KEYS.SUBCAT];
+            if (dataItemSubCategory == HEBCAL_KEYS.SHABBAT)
+              holidaysTimesInHeberw[
+                `${dataItemCategory}_${dataItemSubCategory}`
+              ] = dataItem[HEBCAL_KEYS.HEBREW];
+            console.log(
+              `${dataItemCategory}_${dataItemSubCategory}`,
+              dataItem[HEBCAL_KEYS.HEBREW]
+            );
+            break;
+          default:
+            shabbatTimeValue = String(dataItem[HEBCAL_KEYS.TITLE]);
+            shabbatTimeValue = shabbatTimeValue.substring(
+              shabbatTimeValue.indexOf(":") + 2
+            );
+            switch (dataItemCategory) {
+              case HEBCAL_KEYS.HAVDALAH:
+                for (let shabbatDayTime of shabbatDayTimes) {
+                  sahhabtTimesInHebrew[shabbatDayTime[HEBCAL_KEYS.TEXT]] =
+                    shabbatDayTime[HEBCAL_KEYS.TIME];
+                }
+              case HEBCAL_KEYS.CANDELS:
+                for (let shabbatEveningTime of shabbatEveningTimes) {
+                  sahhabtTimesInHebrew[shabbatEveningTime[HEBCAL_KEYS.TEXT]] =
+                    shabbatEveningTime[HEBCAL_KEYS.TIME];
+                }
+              default:
+                sahhabtTimesInHebrew[shabbatTimeKey] = shabbatTimeValue;
             }
-          }
-
-          sahhabtTimesInHebrew[shabbatTimeKey] = shabbatTimeValue;
-
-          if (dataItemCategory == "candles") {
-            for (let shabbatEveningTime of shabbatEveningTimes) {
-              sahhabtTimesInHebrew[shabbatEveningTime["text"]] =
-                shabbatEveningTime["time"];
-            }
-          }
         }
       }
-      let todayPrayTimeDisplay = {};
-      const todayPrayTimes = getTodayPrayTimes();
-      for (let todayPrayTime of todayPrayTimes) {
-        todayPrayTimeDisplay[todayPrayTime["key"]] = todayPrayTime["value"];
-      }
+
       return {
         sahhabtTimesInHebrew: sahhabtTimesInHebrew,
-        todayPrayTimeDisplay: todayPrayTimeDisplay,
         holidaysTimesInHeberw: holidaysTimesInHeberw
       };
     });

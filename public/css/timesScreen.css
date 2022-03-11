@@ -109,6 +109,7 @@ html {
 .s-m-top-side-column-data #memorial-names-data,
 #joys-news-data,
 #announcments,
+#todays-times,
 #lessons {
   display: flex;
   flex: 1;

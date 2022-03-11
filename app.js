@@ -76,7 +76,7 @@ app.use(function (err, req, res, next) {
   });
 });
 
-var appServer = app.listen(port, () => {
+var appServer = app.listen(port, "192.168.0.100", () => {
   console.log(`Server is listening on port ${port}`);
 });
 

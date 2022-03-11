@@ -1,7 +1,6 @@
 const { app, BrowserWindow } = require("electron");
 
 const server = require("./app");
-
 let mainWindow;
 
 function createWindow() {
@@ -22,8 +21,7 @@ function createWindow() {
   //     nodeIntegration: true
   //   }
   // });
-
-  mainWindow.loadURL("http://192.168.36.79:5000");
+  mainWindow.loadURL("http://192.168.0.100:5000");
   mainWindow.on("closed", function () {
     mainWindow = null;
   });
