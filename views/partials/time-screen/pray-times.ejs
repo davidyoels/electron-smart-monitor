@@ -1,0 +1,31 @@
+<div class="s-m-top-side-column">
+  <div class="s-m-top-side-column-image">
+    <div class="s-m-top-side-column-title">
+      <text class="regular-s-2-5">זמני תפילות חול</text>
+    </div>
+    <div class="s-m-top-side-column-data">
+      <div class="s-m-top-column-actual-data">
+        <div class="marquee-right-side-bar">
+          <div class="track-right-side-bar">
+            <div id="todays-times">
+              <table>
+                <% for (var todayPrayTime of todayPrayTimes) { %>
+                <% for (var todayPrayTime of todayPrayTimes) { %>
+                <tr>
+                  <td>
+                    <text class="assistant-s-2-5"><%= todayPrayTime.key %></text>
+                  </td>
+                  <td>
+                    <text class="assistant-s-2-5"><%= todayPrayTime.value %></text>
+                  </td>
+                </tr>
+                <% } %>
+                <% } %>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -11,9 +11,9 @@ const addJoysNewsScreen = (req, res, next) => {
   });
 };
 
-const getJoysNews = async (req, res, next) => {
+const getJoysNewsData = async (cb) => {
   readFileContent("joys-news", (data) => {
-    res.status(200).json(data);
+    cb(data);
   });
 };
 
@@ -37,6 +37,6 @@ const addJoysNews = async function (req, res, next) {
 
 module.exports = {
   addJoysNewsScreen: addJoysNewsScreen,
-  getJoysNews: getJoysNews,
-  addJoysNews: addJoysNews
+  addJoysNews: addJoysNews,
+  getJoysNewsData: getJoysNewsData
 };

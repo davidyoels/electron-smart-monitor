@@ -4,9 +4,10 @@ const {
   writeContentToFile
 } = require("../utils/files/file-actions");
 
-const getLessons = async (req, res, next) => {
+
+const getLessonsData = async (cb) => {
   readFileContent("lessons", (data) => {
-    res.status(200).json(data);
+    cb(data);
   });
 };
 
@@ -27,6 +28,6 @@ const addLesson = async function (req, res, next) {
 };
 
 module.exports = {
-  getLessons: getLessons,
-  addLesson: addLesson
+  addLesson: addLesson,
+  getLessonsData: getLessonsData
 };
