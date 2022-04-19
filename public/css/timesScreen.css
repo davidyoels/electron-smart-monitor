@@ -302,7 +302,7 @@ html {
 .s-m-bottom-bar-container {
   display: flex;
   flex-direction: row;
-  flex: 0.8;
+  flex: 1;
   height: 100%;
   width: 100%;
   background-color: #b58d00;
