@@ -23,7 +23,7 @@ const readFileContent = async (filename, cb) => {
   }
 };
 
-const writeContentToFile = async (filename, key, newData) => {
+const writeContentToFile = async (filename, key, newData, cb) => {
   try {
     return fs.access(`storage/${filename}.json`, fs.F_OK, (err) => {
       if (err) {
@@ -50,6 +50,7 @@ const writeContentToFile = async (filename, key, newData) => {
             "utf-8",
             function (err) {
               if (err) throw err;
+              if(cb) cb(prevData);
               return { status: 200, message: "Successed" };
             }
           );
@@ -62,7 +63,7 @@ const writeContentToFile = async (filename, key, newData) => {
   }
 };
 
-const reWriteContentToFile = async (filename, key, newData) => {
+const reWriteContentToFile = async (filename, key, newData, cb) => {
   try {
     return fs.access(`storage/${filename}.json`, fs.F_OK, (err) => {
       if (err) {
@@ -89,6 +90,7 @@ const reWriteContentToFile = async (filename, key, newData) => {
             "utf-8",
             function (err) {
               if (err) throw err;
+              if(cb) cb(prevData);
               return { status: 200, message: "Successed" };
             }
           );

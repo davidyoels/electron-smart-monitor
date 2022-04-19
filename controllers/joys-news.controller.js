@@ -26,10 +26,16 @@ const addJoysNews = async function (req, res, next) {
       name: req.body["new-joys-news"],
       time: new Date(),
     };
-    const JoysNews = await writeContentToFile(
+    writeContentToFile(
       "joys-news",
       "joysNews",
-      newJosyNews
+      newJosyNews,
+      (joysData) => {
+        res.render("addJoyNewsScreen", {
+          timeScreenTexts: timeScreenTexts,
+          joysList: joysData.joysNews,
+        });
+      }
     );
   } catch (ex) {
     console.log(ex);
@@ -52,6 +58,8 @@ const getJoysList = async function (req, res, next) {
 
 const deleteJoyName = async function (req, res, next) {
   try {
+    console.log("delete");
+    
     await readFileContent("joys-news", (data) => {
       let joyNew = req.body["joyNew"];
       let jowNewName = joyNew["jowNewName"];
@@ -61,7 +69,12 @@ const deleteJoyName = async function (req, res, next) {
       );
       console.log(joyToDelete);
       if (joyToDelete.length > 0) {
-        reWriteContentToFile("joys-news", "joysNews", joyToDelete);
+        reWriteContentToFile("joys-news", "joysNews", joyToDelete, (joysData) => {
+          res.render("addJoyNewsScreen", {
+            timeScreenTexts: timeScreenTexts,
+            joysList: joysData.joysNews,
+          });
+        });
       }
     });
   } catch (ex) {

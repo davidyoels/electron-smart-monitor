@@ -30,8 +30,8 @@ const getJoysNewsList = () => {
   });
 };
 
-const deleteJoyNew = (jowNewName, joyNewDate) => {
-  fetch("/joys-news/joy-name", {
+const deleteJoyNew = async (jowNewName, joyNewDate) => {
+  return fetch("/joys-news/joy-name", {
     method: "DELETE",
     redirect: "follow",
     headers: {
@@ -43,5 +43,7 @@ const deleteJoyNew = (jowNewName, joyNewDate) => {
         joyNewDate: joyNewDate,
       },
     }),
+  }).then((res) => {
+    return res.data;
   });
 };
