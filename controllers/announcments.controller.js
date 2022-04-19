@@ -4,9 +4,9 @@ const {
   writeContentToFile
 } = require("../utils/files/file-actions");
 
-const getAnnouncments = async (req, res, next) => {
+const getAnnouncments = async (cb) => {
   readFileContent("announcments", (data) => {
-    res.status(200).json(data);
+    cb(data);
   });
 };
 

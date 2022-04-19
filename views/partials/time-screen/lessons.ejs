@@ -1,0 +1,28 @@
+<div class="s-m-top-side-column">
+    <div class="s-m-top-side-column-image">
+        <div class="s-m-top-side-column-title">
+            <text class="regular-s-2-5">שיעורים</text>
+        </div>
+        <div class="s-m-top-side-column-data">
+            <div class="s-m-top-column-actual-data">
+                <div class="marquee-side-bar">
+                    <div class="track-side-bar">
+                        <div id="lessons">
+                            <table>
+                                <% for (var todayPrayTime of lessons) { %>
+                                <tr>
+                                    <td>
+                                        <text class="assistant-s-2-5"><%= todayPrayTime.key %></text><br />
+                                        <text class="assistant-s-2-5"><%= todayPrayTime.value %></text><br />
+                                        <text class="assistant-s-2-5">*</text>
+                                    </td>
+                                </tr>
+                                <% } %>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

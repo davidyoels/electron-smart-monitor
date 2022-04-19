@@ -1,34 +1,21 @@
-
 <%- include('partials/head.ejs') %>
 <link rel="stylesheet" href="/css/timesScreen.css" />
 <link rel="stylesheet" href="/css/marque.css" />
 <link rel="stylesheet" href="/css/marquee-horizontal.css" />
 <link rel="stylesheet" href="/css/tables.css" />
-  <script type="module" src="/js/time-screen.js"></script>
-  <script src="/js/memorize-names.js"></script>
-  <script src="/js/day-time-display.js"></script>
-  <script src="/js/joys-news.js"></script>
-  <script src="/js/announcments.js"></script>
-  <script src="/js/lessons.js"></script>
-  <script
-    type="text/javascript"
-    src="/jquery/jquery.lettering.min.js"
-  ></script>
-  <script src="/circletype/dist/circletype.min.js"></script>
-  <script>
-    function init() {
-      initialPageSetup();
-      getMemorizeNames();
-      getJoysNews();
-      getAnnouncments();
-      getLessons();
-      makeTextCircle();
-      // window.addEventListener('resize',()=>{
-      //   makeTextCircle();
-      // })
-    }
-  </script>
+<script type="module" src="/js/time-screen.js"></script>
+<script src="/js/day-time-display.js"></script>
+<script src="/js/announcments.js"></script>
+<script type="text/javascript" src="/jquery/jquery.lettering.min.js"></script>
+<script src="/circletype/dist/circletype.min.js"></script>
+<script>
+  function init() {
+    initialPageSetup();
+    makeTextCircle();
+  }
+</script>
 </head>
+
 <body onload="init()">
   <div class="s-m-container">
     <div class="header-page-bar">
@@ -38,128 +25,24 @@
       <div class="s-m-info-section">
         <div class="s-m-side-column-container">
           <div class="s-m-side-column-inner-container">
-            <div class="s-m-top-side-column">
-              <div class="s-m-top-side-column-image">
-                <div class="s-m-top-side-column-title">
-                  <text class="regular-s-2-5">שיעורים</text>
-                </div>
-                <div class="s-m-top-side-column-data">
-                  <div class="s-m-top-column-actual-data">
-                    <div class="marquee">
-                      <div class="track">
-                        <div id="lessons"></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="s-m-bottom-side-column"></div>
+            <%- include('partials/time-screen/lessons.ejs') %>
+            <%- include('partials/time-screen/announcments.ejs') %>
           </div>
         </div>
         <div class="s-m-middle-column-container">
           <div class="s-m-bottom-column-inner-container">
-            <div class="s-m-middle-top-column">
-              <div class="s-m-middle-top-image">
-                <div class="s-m-middle-column-title">
-                  <text id="s-m-middle-title" class="regular-s-4">זמני היום</text>
-                </div>
-                <div class="s-m-middle-column-data">
-                  <div class="s-m-middle-column-actual-data">
-                    <div class="marquee">
-                      <div class="track">
-                        <table id="zmanim-table-data"></table>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="s-m-middle-bottom-column">
-              <div class="s-m-middle-side">
-                <div class="clip-art-container align-start">
-                  <div class="clip-art-image">
-                    <h3 class="assistant-s-2">
-                      ותן טל ומטר לברכה
-                    </h3>
-                  </div>
-                </div>
-                 <div class="clip-art-container align-end">
-                  <div class="clip-art-image ">
-                    <h3 class="assistant-s-2">
-                      משיב הרוח <br/> ומוריד הגשם
-                    </h3>
-                  </div>
-                </div>
-              </div>
-              <div class="s-m-middle-center">
-                 <div class="clock-container">
-                  <div class="clock">
-                    <%- include('partials/components/clock.ejs') %>
-                  </div>
-                </div>   
-              </div>
-              <div class="s-m-middle-side">
-                <div class="clip-art-container align-end">
-                  <div class="clip-art-image">
-                    <h3 class="assistant-s-2">
-                    </h3>
-                  </div>
-                </div>
-                <div class="clip-art-container align-start">
-                  <div class="clip-art-image">
-                    <h3 class="assistant-s-2">
-                    </h3>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <%- include('partials/time-screen/today-times') %>
+            <%- include('partials/time-screen/today-info.ejs') %>
           </div>
         </div>
         <div class="s-m-side-column-container">
           <div class="s-m-side-column-inner-container">
-            <div class="s-m-top-side-column">
-              <div class="s-m-top-side-column-image">
-                <div class="s-m-top-side-column-title">
-                  <text class="regular-s-2-5">הודעות</text>
-                </div>
-                <div class="s-m-top-side-column-data">
-                  <div class="s-m-top-column-actual-data">
-                    <div class="marquee">
-                      <div class="track">
-                        <div id="announcments"></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="s-m-bottom-side-column">
-                <text style="align-self: center;" class="regular-s-2">מזל טוב</text>
-              <div class="marquee">
-                <div class="track">
-                  <div id="joys-news-data"></div>
-                </div>
-              </div>
-            </div>
+            <%- include('partials/time-screen/pray-times.ejs') %>
+            <%- include('partials/time-screen/joys.ejs') %>
           </div>
         </div>
       </div>
-   
-      <div class="s-m-bottom-bar-container">
-        <div class="s-m-bottom-bar">
-          <div class="s-m-bottom-text">
-            <text class="memorial-names  assistant-s-2">אימי מורתי שבע בת יוסף</text>
-          </div>
-          <div class="s-m-bottom-text">
-            <text class="memorial-names  assistant-s-2-5">נתרם לעילוי נשמת</text>
-          </div>
-          <div class="s-m-bottom-text">
-            <text class="memorial-names  assistant-s-2">אבי מורי הרב ישראל בן דב אינדיג</text>
-          </div>
-        </div>
-      </div>
+      <%- include('partials/time-screen/footer.ejs') %>
     </div>
   </div>
 </body>
-</html>

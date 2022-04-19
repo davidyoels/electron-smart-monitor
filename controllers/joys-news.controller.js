@@ -4,6 +4,7 @@ const {
   writeContentToFile,
   reWriteContentToFile,
 } = require("../utils/files/file-actions");
+const { notifyAddedNewJoyNew } = require("../events/socket");
 
 const addJoysNewsScreen = async (req, res, next) => {
   readFileContent("joys-news", (data) => {
@@ -14,9 +15,9 @@ const addJoysNewsScreen = async (req, res, next) => {
   });
 };
 
-const getJoysNews = async (req, res, next) => {
+const getJoysNewsData = async (cb) => {
   readFileContent("joys-news", (data) => {
-    res.status(200).json(data);
+    cb(data);
   });
 };
 
@@ -26,6 +27,7 @@ const addJoysNews = async function (req, res, next) {
       name: req.body["new-joys-news"],
       time: new Date(),
     };
+    notifyAddedNewJoyNew(newJosyNews.name);
     writeContentToFile(
       "joys-news",
       "joysNews",
@@ -37,6 +39,7 @@ const addJoysNews = async function (req, res, next) {
         });
       }
     );
+    // res.status(200).send({});
   } catch (ex) {
     console.log(ex);
   }
@@ -58,8 +61,6 @@ const getJoysList = async function (req, res, next) {
 
 const deleteJoyName = async function (req, res, next) {
   try {
-    console.log("delete");
-    
     await readFileContent("joys-news", (data) => {
       let joyNew = req.body["joyNew"];
       let jowNewName = joyNew["jowNewName"];
@@ -68,14 +69,12 @@ const deleteJoyName = async function (req, res, next) {
         (item) => item.name != jowNewName || item.time != joyNewDate
       );
       console.log(joyToDelete);
-      if (joyToDelete.length > 0) {
-        reWriteContentToFile("joys-news", "joysNews", joyToDelete, (joysData) => {
-          res.render("addJoyNewsScreen", {
-            timeScreenTexts: timeScreenTexts,
-            joysList: joysData.joysNews,
-          });
+      reWriteContentToFile("joys-news", "joysNews", joyToDelete, (joysData) => {
+        res.render("addJoyNewsScreen", {
+          timeScreenTexts: timeScreenTexts,
+          joysList: joysData.joysNews,
         });
-      }
+      });
     });
   } catch (ex) {
     console.log(ex);
@@ -84,8 +83,9 @@ const deleteJoyName = async function (req, res, next) {
 
 module.exports = {
   addJoysNewsScreen: addJoysNewsScreen,
-  getJoysNews: getJoysNews,
   addJoysNews: addJoysNews,
   getJoysList: getJoysList,
   deleteJoyName: deleteJoyName,
+  addJoysNews: addJoysNews,
+  getJoysNewsData: getJoysNewsData
 };

@@ -9,6 +9,8 @@ var index = require("./routes/index.route");
 // socket-io
 const { createSocketIO } = require("./events/socket");
 
+const port = 5000;
+
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
 
@@ -20,7 +22,7 @@ app.use(express.static(path.join(__dirname, "vendor")));
 // Add headers before the routes are defined
 app.use(function (req, res, next) {
   // Website you wish to allow to connect
-  res.setHeader("Access-Control-Allow-Origin", "http://192.168.0.107:5000");
+  res.setHeader("Access-Control-Allow-Origin", "*");
 
   // Request methods you wish to allow
   res.setHeader(
@@ -74,7 +76,9 @@ app.use(function (err, req, res, next) {
   });
 });
 
-var appServer = app.listen(5000);
+var appServer = app.listen(port, () => {
+  console.log(`Server is listening on port ${port}`);
+});
 
 createSocketIO(appServer);
 

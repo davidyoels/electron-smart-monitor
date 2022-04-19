@@ -8,9 +8,10 @@ const addMemorialScreen = (req, res, next) => {
   });
 };
 
-const getMemorialNames = async (req, res, next) => {
+
+const getMemorialNames = async (cb) => {
   readFileContent("memorial-names", (data) => {
-    res.status(200).json(data);
+    cb(data)
   });
 };
 

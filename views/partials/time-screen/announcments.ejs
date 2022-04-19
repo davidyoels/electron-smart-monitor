@@ -1,0 +1,13 @@
+<div class="s-m-bottom-side-column">
+    <text style="align-self: center;" class="regular-s-2">הודעות</text>
+    <div class="marquee">
+        <div class="track">
+            <div id="announcments">
+                <% for(var announcment of announcments) { %>
+                <text class="assistant-s-2-5"><%= announcment.name %></text><br />
+                <text class="assistant-s-2-5">*</text><br />
+                <% } %>
+            </div>
+        </div>
+    </div>
+</div>

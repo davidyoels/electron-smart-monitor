@@ -8,6 +8,8 @@ const { fetchTodayHebrewDate } = require("../data/today-hebrew-times.data");
 const scheduleDaily = "01 00 00 * * *";
 const scheduleWeekly = "01 00 00 * * 7";
 
+let io;
+
 const scheduleJob = (name, expression, callback) => {
   schedule.scheduleJob(name, expression, callback);
 };
@@ -59,8 +61,12 @@ const scheduleSwapText = (io) => {
   io.emit("schedule_swap_text");
 };
 
+const notifyAddedNewJoyNew = (data) => {
+  io.emit("add_joys_news", data);
+};
+
 const createSocketIO = (appServer) => {
-  const io = socketIO(appServer);
+  io = socketIO(appServer);
   io.on("connection", (socket) => {
     console.log("a user connected");
     scheduleSwapText(io);
@@ -69,5 +75,6 @@ const createSocketIO = (appServer) => {
 };
 
 module.exports = {
-  createSocketIO: createSocketIO
+  createSocketIO: createSocketIO,
+  notifyAddedNewJoyNew: notifyAddedNewJoyNew
 };
