@@ -23,7 +23,7 @@ const readFileContent = async (filename, cb) => {
   }
 };
 
-const writeContentToFile = async (filename, key, newData) => {
+const writeContentToFile = async (filename, key, newData, cb) => {
   try {
     return fs.access(`storage/${filename}.json`, fs.F_OK, (err) => {
       if (err) {
@@ -50,6 +50,47 @@ const writeContentToFile = async (filename, key, newData) => {
             "utf-8",
             function (err) {
               if (err) throw err;
+              if(cb) cb(prevData);
+              return { status: 200, message: "Successed" };
+            }
+          );
+        }
+      );
+    });
+  } catch (ex) {
+    console.log(err);
+    return { status: 500, err: `Cannot read from ${filename} file` };
+  }
+};
+
+const reWriteContentToFile = async (filename, key, newData, cb) => {
+  try {
+    return fs.access(`storage/${filename}.json`, fs.F_OK, (err) => {
+      if (err) {
+        return fs.writeFile(
+          `storage/${filename}.json`,
+          JSON.stringify({ key: [newData] }),
+          { flag: "wx", encoding: "utf-8" },
+          function (err) {
+            if (err) throw err;
+            return { status: 200, message: "Successed" };
+          }
+        );
+      }
+      return fs.readFile(
+        `${baseFileRoute}/${filename}.json`,
+        "utf8",
+        (err, data) => {
+          if (err) throw err;
+          let prevData = {};
+          prevData[key] = newData;
+          return fs.writeFile(
+            `storage/${filename}.json`,
+            JSON.stringify(prevData),
+            "utf-8",
+            function (err) {
+              if (err) throw err;
+              if(cb) cb(prevData);
               return { status: 200, message: "Successed" };
             }
           );
@@ -64,5 +105,6 @@ const writeContentToFile = async (filename, key, newData) => {
 
 module.exports = {
   readFileContent: readFileContent,
-  writeContentToFile: writeContentToFile
+  writeContentToFile: writeContentToFile,
+  reWriteContentToFile: reWriteContentToFile,
 };

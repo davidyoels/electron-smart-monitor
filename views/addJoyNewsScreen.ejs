@@ -1,36 +1,57 @@
 <%- include('partials/head.ejs') %>
 <link rel="stylesheet" href="/css/addJoysNews.css" />
-  </head>
-  <body onload="initialPageSetup(); initialSetup()">
-    <div class="s-m-container">
-      <%- include('partials/header-page.ejs') %>
-      <div class="s-m-times">
+<script type="text/javascript" src="/js/joys-news.js"></script>
+<script>
+  function onTap(jowNewName, joyNewDate) {
+    deleteJoyNew(jowNewName, joyNewDate)
+  }
+
+  function onEnded() {
+    console.log("data");
+  }
+</script>
+</head>
+
+<body onload="initialPageSetup(); initialSetup()">
+  <div class="s-m-container">
+    <%- include('partials/header-page.ejs') %>
+    <div class="s-m-times">
+      <div class="form-section">
         <form class="form" method="POST" action="/joys-news/add-joys-names">
           <div class="title">
             <text>הוסף שמחות</text>
           </div>
           <div class="edit-name">
             <div class="add-name-container">
-              <textarea
-                id="new-joys-news"
-                name="new-joys-news"
-                aria-multiline="true"
-                type="text"
-                class="form-control"
-                placeholder="כתוב כאן"
-              ></textarea>
+              <textarea id="new-joys-news" name="new-joys-news" aria-multiline="true" type="text" class="form-control"
+                placeholder="כתוב כאן"></textarea>
             </div>
           </div>
           <div class="add">
             <div class="addition-submit-container">
-              <button type="submit" class="btn btn-warning btn-lg">הוסף</button>
+              <button type="submit" onended="onEnded()" class="btn btn-warning">הוסף</button>
             </div>
-          </div>
-          <div class="clip-art-container">
-            <div class="clip-art-design"></div>
           </div>
         </form>
       </div>
+      <div class="joys-news-list">
+        <div style="height: 80%; width: 100%; align-self: center;">
+          <ul class="list-group">
+            <% for(var item of joysList) { %>
+            <li class="list-group-item">
+              <div class="joy-new-item">
+                <text style="color: black; word-break: break-all;"><%= item.name %></text>
+                <button onclick="onTap('<%= item.name %>', '<%= item.time %>')" type="button"
+                  class="btn btn-dark">מחק</button>
+              </div>
+            </li>
+            <% } %>
+          </ul>
+        </div>
+      </div>
+
     </div>
-  </body>
+  </div>
+</body>
+
 </html>

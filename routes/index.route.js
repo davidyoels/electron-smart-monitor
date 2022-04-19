@@ -1,6 +1,8 @@
 const express = require("express");
 const router = express.Router();
 
+router.use(express.json());
+
 const shabbatTimesRoute = require("./shabbat-times.route");
 const joysNewsRouter = require("./joys-news.route");
 const memorialRoute = require("./memoriale.route");
